@@ -1,0 +1,1647 @@
+par(mar=c(4,4,4,8),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey25",#
+		xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.5)#
+legend("topright", inset=c(-0.5,0), legend=c("Mean\nover species","Individual\nspecies"), pch=c(16,16))
+par(mar=c(4,4,4,8),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey25",#
+		xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.5)#
+legend("topright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"), pch=c(16,16))
+?legend
+par(mar=c(4,4,4,8),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey25",#
+		xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.5)#
+legend("topright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"), pch=c(16,16), bty="n")
+par(mar=c(4,4,4,8),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey25",#
+		xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.5)#
+legend("topright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"), pch=c(16,16), bty="n",y.intersp=1)
+par(mar=c(4,4,4,8),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey25",#
+		xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.5)#
+legend("topright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"), pch=c(16,16), bty="n",y.intersp=2)
+par(mar=c(4,4,4,8),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey25",#
+		xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.5)#
+legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"), pch=c(16,16), bty="n",y.intersp=2)
+par(mar=c(4,4,4,8),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey25",#
+		xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.5)#
+legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"), pch=c(16,16), bty="n",y.intersp=2,pt.bg=c("red2","grey25"))
+par(mar=c(4,4,4,8),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey25",#
+		xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.5)#
+legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"), pch=c(16,16), bty="n",y.intersp=2,col=c("red2","grey25"))
+par(mar=c(4,4,4,8),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey25",#
+		xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.5)#
+legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"), pch=c(16,16), #
+		bty="n",y.intersp=2,col=c("red2","grey25"))
+par(mar=c(4,4,4,8),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey25",#
+		xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.5)#
+legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"), pch=c(16,16), pch=16,cex=1,#
+		bty="n",y.intersp=2,col=c("red2","grey25"))
+par(mar=c(4,4,4,8),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey25",#
+		xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.5)#
+legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"), pch=c(16,16), pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey25"))
+par(mar=c(4,4,4,8),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey25",#
+		xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.5)#
+legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey25"))
+par(mar=c(4,4,4,8),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey25",#
+		xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey25"))
+par(mar=c(4,4,4,8),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+		xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))
+getwd()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=7,height=5)#
+	par(mar=c(4,4,4,8),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=5,height=3)#
+	par(mar=c(4,4,4,8),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=6,height=5)#
+	par(mar=c(4,4,4,8),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=6,height=4)#
+	par(mar=c(4,4,4,8),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab=paste("Tjur",expression(R^2)),xlab="Models")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+axis(2,paste("Tjur",expression(R^2)))
+par(mar=c(4,4,4,8),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="Models")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)
+mtext(2,paste("Tjur",expression(R^2)))
+?mtetx
+?mtext
+par(mar=c(4,4,4,8),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="Models")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(text=paste("Tjur",expression(R^2)), side=1, line=1)
+mtext(text=paste("Tjur",expression(R^2)), side=1, line=1)
+par(mar=c(4,4,4,8),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="Models")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	mtext(text=paste("Tjur",expression(R^2)), side=1, line=1)
+par(mar=c(4,4,4,8),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="Models")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	mtext(text="Models", side=1, line=1)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))
+par(mar=c(4,4,4,8),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	mtext(text="Models", side=1, line=1)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=6,height=4)#
+	par(mar=c(3,3,3,8),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	mtext(text="Models", side=1, line=1)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=6,height=4)#
+	par(mar=c(3,3,3,6),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	mtext(text="Models", side=1, line=1)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=6,height=4)#
+	par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	mtext(text="Models", side=1, line=1)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=6,height=4)#
+	par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	mtext(text="Models", side=1, line=1)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.35,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+paste("Model",1:6)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	mtext(text="Models", side=1, line=1)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.35,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))
+par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.35,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=6,height=5)#
+	par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.35,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=7,height=5)#
+	par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.35,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=7,height=5)#
+	par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.3,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=7,height=5)#
+	par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.25,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=7,height=5)#
+	par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=8,height=5)#
+	par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=8,height=5)#
+	par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.25,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=8,height=5)#
+	par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.225,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=7,height=4)#
+	par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.225,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=7,height=4)#
+	par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.25,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=7,height=4)#
+	par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+colTjurs
+pdf(file=paste("figs/R2s.pdf",sep=""),bg="transparent",width=15,height=7)#
+	par(mfrow=c(2,6),mar=c(2,1,2,0),oma=c(4,4,3,1))#
+	for (type in 1:2) {#
+		for (m in 1:6) {#
+			plot(y=colTjurs[,m,type],x=colSums(YVAL),xaxt="n",yaxt="n",xlab="",ylab="",main=paste("model",m))#
+			mtext(side=1, text=paste("min",round(min(colTjurs[,m,type],na.rm=T),2),#
+									 "mean",round(mean(colTjurs[,m,type],na.rm=T),2),#
+									 "max",round(max(colTjurs[,m,type],na.rm=T),2)), cex=0.65,line=0.25)#
+		if (m==1) { mtext(side=2,text=dimnames(colTjurs)[[3]][type],line=2, font=2) }#
+		}#
+	}#
+	mtext(outer=T,side=1,text="Species Prevalence",line=1.5)#
+	mtext(outer=T,side=3,text="Tjur R",line=1.25, cex=1.5)#
+	dev.off()
+pdf(file=paste("figs/R2s.pdf",sep=""),bg="transparent",width=15,height=6)#
+	par(mfrow=c(2,6),mar=c(2,1,2,0),oma=c(4,4,3,1))#
+	for (type in 1:2) {#
+		for (m in 1:6) {#
+			plot(y=colTjurs[,m,type],x=colSums(YVAL),xaxt="n",yaxt="n",xlab="",ylab="",main=paste("model",m))#
+			mtext(side=1, text=paste("min",round(min(colTjurs[,m,type],na.rm=T),2),#
+									 "mean",round(mean(colTjurs[,m,type],na.rm=T),2),#
+									 "max",round(max(colTjurs[,m,type],na.rm=T),2)), cex=0.65,line=0.25)#
+		if (m==1) { mtext(side=2,text=dimnames(colTjurs)[[3]][type],line=2, font=2) }#
+		}#
+	}#
+	mtext(outer=T,side=1,text="Species Prevalence",line=1.5)#
+	mtext(outer=T,side=3,text="Tjur R",line=1.25, cex=1.5)#
+	dev.off()
+colMeans(colTjurs[,,1])
+colMeans(colTjurs[,,2])
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=7,height=4)#
+	par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression(R^2)), side=2, line=1)#
+	legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+colMeans(colTjurs[,,2])
+paste("Tjur",expression(R^2))
+expression(R^2)
+c("Tjur",expression(R^2))
+?expression
+expression(paste("R"^"2"))
+par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression(paste("R"^"2"))), side=2, line=1)#
+	legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))
+par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression(paste("R"^"2"))), side=2, line=1)#
+	legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))
+par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression("R"^"2")), side=2, line=1)#
+	legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))
+expression('R'^2)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=paste("Tjur",expression("R"^{2})), side=2, line=1)#
+	legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))
+expression("Concentration Cl" ~ (mu ~ moles ~ g^{-1} ~ "dry wt")
+expression("Concentration Cl" ~ (mu ~ moles ~ g^{-1} ~ "dry wt"))
+expression("Concentration Cl" ~ (mu ~ moles ~ g^{-1} ~ "dry wt"))
+expression("Tjur" ~ (R^{-1}))
+expression("Tjur" ~ (R^{-1}))
+expression("Tjur" ~ (R^{2}))
+par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=expression("Tjur" ~ (R^{2})), side=2, line=1)#
+	legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))
+par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+	legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=7,height=4)#
+	par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",#
+			xaxt="n",yaxt="n",main="Predictive performance",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+	legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	dev.off()
+colTjurs[,,2]
+colTjurs[,1,2]
+colTjurs[,6,2]
+plot(colTjurs[,6,2])
+YVAL
+plot(colTjurs[,6,2],x=colSums(YVAL))
+plot(colTjurs[,6,2],x=colSums(YVAL))#
+points(colTjurs[,6,2],x=colSums(YVAL)
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16)#
+points(colTjurs[,1,2],x=colSums(YVAL)
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16)
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16)
+points(colTjurs[,1,2],x=colSums(YVAL)
+points(colTjurs[,1,2],x=colSums(YVAL))
+points(colTjurs[,1,2],x=colSums(YVAL))
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1))#
+points(colTjurs[,1,2],x=colSums(YVAL))
+par(mfrow=c(2,6),mar=c(2,1,2,0),oma=c(4,4,3,1))#
+	for (type in 1:2) {#
+		for (m in 1:6) {#
+			plot(y=colTjurs[,m,type],x=colSums(YVAL),xaxt="n",yaxt="n",xlab="",ylab="",main=paste("model",m),ylim=c(0,1))#
+			mtext(side=1, text=paste("min",round(min(colTjurs[,m,type],na.rm=T),2),#
+									 "mean",round(mean(colTjurs[,m,type],na.rm=T),2),#
+									 "max",round(max(colTjurs[,m,type],na.rm=T),2)), cex=0.65,line=0.25)#
+		if (m==1) { mtext(side=2,text=dimnames(colTjurs)[[3]][type],line=2, font=2) }#
+		}#
+	}#
+	mtext(outer=T,side=1,text="Species Prevalence",line=1.5)#
+	mtext(outer=T,side=3,text="Tjur R",line=1.25, cex=1.5)
+pdf(file=paste("figs/R2s.pdf",sep=""),bg="transparent",width=15,height=6)#
+	par(mfrow=c(2,6),mar=c(2,1,2,0),oma=c(4,4,3,1))#
+	for (type in 1:2) {#
+		for (m in 1:6) {#
+			plot(y=colTjurs[,m,type],x=colSums(YVAL),xaxt="n",yaxt="n",xlab="",ylab="",main=paste("model",m),ylim=c(0,1))#
+			mtext(side=1, text=paste("min",round(min(colTjurs[,m,type],na.rm=T),2),#
+									 "mean",round(mean(colTjurs[,m,type],na.rm=T),2),#
+									 "max",round(max(colTjurs[,m,type],na.rm=T),2)), cex=0.65,line=0.25)#
+		if (m==1) { mtext(side=2,text=dimnames(colTjurs)[[3]][type],line=2, font=2) }#
+		}#
+	}#
+	mtext(outer=T,side=1,text="Species Prevalence",line=1.5)#
+	mtext(outer=T,side=3,text="Tjur R",line=1.25, cex=1.5)#
+	dev.off()
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1))#
+points(colTjurs[,1,2],x=colSums(YVAL))
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1))#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25)
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1))#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")
+colTjurs[,1,2]
+dim(colTjurs)
+dim(colTjurs)[1]
+colTjurs[i,1,2]
+i<-1
+colTjurs[i,1,2]
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1))#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=colSums(YVAL)[i],pch=25,col="blue")#
+}
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1))#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}
+lm(colTjurs[,6,2]~colSums(YVAL))
+plot(lm(colTjurs[,6,2]~colSums(YVAL)))
+åredict(lm(colTjurs[,6,2]~colSums(YVAL)))
+predict(lm(colTjurs[,6,2]~colSums(YVAL)))
+plot(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL))
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1))#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+plot(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL),add=T,type="l")#
+plot(predict(lm(colTjurs[,1,2]~colSums(YVAL))),x=colSums(YVAL),add=T,type="l",col="blue")
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1))#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL))#
+lines(predict(lm(colTjurs[,1,2]~colSums(YVAL))),x=colSums(YVAL),col="blue")
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xlab=expression("Tjur" ~ R^{2}),ylab="Species prevalence")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL))#
+lines(predict(lm(colTjurs[,1,2]~colSums(YVAL))),x=colSums(YVAL),col="blue")
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xlab=expression("Tjur" ~ R^{2}),ylab="Species prevalence",main="Performance of the best model")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL))#
+lines(predict(lm(colTjurs[,1,2]~colSums(YVAL))),x=colSums(YVAL),col="blue")
+pdf(file=paste("figs/2B.pdf",sep=""),bg="transparent",width=7,height=4)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xlab=expression("Tjur" ~ R^{2}),ylab="Species prevalence",main="Performance of the best model")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL))#
+lines(predict(lm(colTjurs[,1,2]~colSums(YVAL))),x=colSums(YVAL),col="blue")#
+dev.off()
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xlab=expression("Tjur" ~ R^{2}),ylab="Species prevalence",main="Performance of the best model")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL))#
+lines(predict(lm(colTjurs[,1,2]~colSums(YVAL))),x=colSums(YVAL),col="blue")#
+legend("bottomright", inset=c(-0.275,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xlab=expression("Tjur" ~ R^{2}),ylab="Species prevalence",main="Performance of the best model")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL))#
+lines(predict(lm(colTjurs[,1,2]~colSums(YVAL))),x=colSums(YVAL),col="blue")#
+legend("bottomright", inset=c(-0.275,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))
+legend("bottomright", inset=c(-0.25,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))
+pdf(file=paste("figs/2B.pdf",sep=""),bg="transparent",width=7,height=4)#
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xlab=expression("Tjur" ~ R^{2}),ylab="Species prevalence",main="Performance of the best model")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL))#
+lines(predict(lm(colTjurs[,1,2]~colSums(YVAL))),x=colSums(YVAL),col="blue")#
+legend("bottomright", inset=c(-0.25,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+dev.off()
+pdf(file=paste("figs/2B.pdf",sep=""),bg="transparent",width=7,height=4)#
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xlab=expression("Tjur" ~ R^{2}),ylab="Species prevalence",main="Performance of the best model")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL))#
+lines(predict(lm(colTjurs[,1,2]~colSums(YVAL))),x=colSums(YVAL),col="blue")#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+dev.off()
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL))#
+lines(predict(lm(colTjurs[,1,2]~colSums(YVAL))),x=colSums(YVAL),col="blue")#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model)#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL))#
+lines(predict(lm(colTjurs[,1,2]~colSums(YVAL))),x=colSums(YVAL),col="blue")#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL))#
+lines(predict(lm(colTjurs[,1,2]~colSums(YVAL))),x=colSums(YVAL),col="blue")#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))
+pdf(file=paste("figs/2B.pdf",sep=""),bg="transparent",width=7,height=4)#
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL))#
+lines(predict(lm(colTjurs[,1,2]~colSums(YVAL))),x=colSums(YVAL),col="blue")#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+dev.off()
+par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",,main="Predictive performance",#
+			xaxt="n",yaxt="n",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+	legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	mtext(side=3,text="A",line=1.5,font=2,adj=0,cex=1)
+mtext(side=3,text="A",line=1,font=2,adj=0,cex=1)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL))#
+lines(predict(lm(colTjurs[,1,2]~colSums(YVAL))),x=colSums(YVAL),col="blue")#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1)
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=7,height=4)#
+	par(mar=c(3,3,3,7),xpd=TRUE)#
+	plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",,main="Predictive performance",#
+			xaxt="n",yaxt="n",ylab="",xlab="")#
+	points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+	axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+	legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+		bty="n",y.intersp=2,col=c("red2","grey50"))#
+	mtext(side=3,text="A",line=1,font=2,adj=0,cex=1.25)#
+	dev.off()#
+#
+	pdf(file=paste("figs/R2s.pdf",sep=""),bg="transparent",width=15,height=6)#
+	par(mfrow=c(2,6),mar=c(2,1,2,0),oma=c(4,4,3,1))#
+	for (type in 1:2) {#
+		for (m in 1:6) {#
+			plot(y=colTjurs[,m,type],x=colSums(YVAL),xaxt="n",yaxt="n",xlab="",ylab="",main=paste("model",m),ylim=c(0,1))#
+			mtext(side=1, text=paste("min",round(min(colTjurs[,m,type],na.rm=T),2),#
+									 "mean",round(mean(colTjurs[,m,type],na.rm=T),2),#
+									 "max",round(max(colTjurs[,m,type],na.rm=T),2)), cex=0.65,line=0.25)#
+		if (m==1) { mtext(side=2,text=dimnames(colTjurs)[[3]][type],line=2, font=2) }#
+		}#
+	}#
+	mtext(outer=T,side=1,text="Species Prevalence",line=1.5)#
+	mtext(outer=T,side=3,text="Tjur R",line=1.25, cex=1.5)#
+	dev.off()#
+pdf(file=paste("figs/2B.pdf",sep=""),bg="transparent",width=7,height=4)#
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue")#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL))#
+lines(predict(lm(colTjurs[,1,2]~colSums(YVAL))),x=colSums(YVAL),col="blue")#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)#
+dev.off()
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue",log="x")
+?plot
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue",xlog=T)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}
+lines(predict(lm(colTjurs[,6,2]~colSums(YVAL))),x=colSums(YVAL))#
+lines(predict(lm(colTjurs[,1,2]~colSums(YVAL))),x=colSums(YVAL),col="blue")
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue",xlog=T)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=log(colSums(YVAL)))#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=log(colSums(YVAL)),col="blue")
+predict(lm(colTjurs[,6,2]~log(colSums(YVAL))))
+log(colSums(YVAL))
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)))#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue")
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue",xlog=T)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)))#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue")
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue",xlog=T)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)))#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue")
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=25,col="blue",xlog=T,fill="blue")#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)))#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue")
+?points
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=17,col="blue",xlog=T)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)))#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue")#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=17,col="blue",xlog=T)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=1.5)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=1.5)#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=17,col="blue",xlog=T)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=2)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=2)#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)
+pdf(file=paste("figs/2B.pdf",sep=""),bg="transparent",width=7,height=4)#
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=17,col="blue",xlog=T)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=2)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=2)#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)#
+dev.off()
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=17,col="blue",xlog=T)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=1.5)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=1.5)#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)
+pdf(file=paste("figs/2B.pdf",sep=""),bg="transparent",width=7,height=4)#
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=17,col="blue",xlog=T)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=1.5)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=1.5)#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)#
+dev.off()
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",,ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=17,col="blue",xlog=T)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=1.5)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=1.5)#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)
+?axis
+axis(side=1, at=c(0,1), labels=c(0,1), tick=F)
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=17,col="blue",xlog=T)#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=1.5)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=1.5)#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=17,col="blue",xlog=T)#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=1.5)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=1.5)#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",,main="Predictive performance",#
+		xaxt="n",yaxt="n",ylab="",xlab="")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+	bty="n",y.intersp=2,col=c("red2","grey50"))#
+mtext(side=3,text="A",line=1,font=2,adj=0,cex=1.25)#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)
+par(mfrow=c(2,6),mar=c(2,1,2,0),oma=c(4,4,3,1))#
+for (type in 1:2) {#
+	for (m in 1:6) {#
+		plot(y=colTjurs[,m,type],x=colSums(YVAL),xaxt="n",yaxt="n",xlab="",ylab="",main=paste("model",m),ylim=c(0,1))#
+		mtext(side=1, text=paste("min",round(min(colTjurs[,m,type],na.rm=T),2),#
+								 "mean",round(mean(colTjurs[,m,type],na.rm=T),2),#
+								 "max",round(max(colTjurs[,m,type],na.rm=T),2)), cex=0.65,line=0.25)#
+		axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+	if (m==1) { mtext(side=2,text=dimnames(colTjurs)[[3]][type],line=2, font=2) }#
+	}#
+}#
+mtext(outer=T,side=1,text="Species Prevalence",line=1.5)#
+mtext(outer=T,side=3,text="Tjur R",line=1.25, cex=1.5)
+par(mfrow=c(2,6),mar=c(2,1,2,0),oma=c(4,4,3,1))#
+for (type in 1:2) {#
+	for (m in 1:6) {#
+		plot(y=colTjurs[,m,type],x=colSums(YVAL),xaxt="n",yaxt="n",xlab="",ylab="",main=paste("model",m),ylim=c(0,1))#
+		mtext(side=1, text=paste("min",round(min(colTjurs[,m,type],na.rm=T),2),#
+								 "mean",round(mean(colTjurs[,m,type],na.rm=T),2),#
+								 "max",round(max(colTjurs[,m,type],na.rm=T),2)), cex=0.65,line=0.25)#
+		axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+	if (m==1) { mtext(side=2,text=dimnames(colTjurs)[[3]][type],line=2, font=2) }#
+	}#
+}#
+mtext(outer=T,side=1,text="Species Prevalence",line=1.5)#
+mtext(outer=T,side=3,text="Tjur R",line=1.25, cex=1.5)
+par(mfrow=c(2,6),mar=c(2,1,2,0),oma=c(4,4,3,1))#
+for (type in 1:2) {#
+	for (m in 1:6) {#
+		plot(y=colTjurs[,m,type],x=colSums(YVAL),xaxt="n",yaxt="n",xlab="",ylab="",main=paste("model",m),ylim=c(0,1))#
+		mtext(side=1, text=paste("min",round(min(colTjurs[,m,type],na.rm=T),2),#
+								 "mean",round(mean(colTjurs[,m,type],na.rm=T),2),#
+								 "max",round(max(colTjurs[,m,type],na.rm=T),2)), cex=0.65,line=0.25)#
+	if (m==1) { #
+		mtext(side=2,text=dimnames(colTjurs)[[3]][type],line=2, font=2) #
+		axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+		}#
+	}#
+}#
+mtext(outer=T,side=1,text="Species Prevalence",line=1.5)#
+mtext(outer=T,side=3,text="Tjur R",line=1.25, cex=1.5)
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=7,height=4)#
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",,main="Predictive performance",#
+		xaxt="n",yaxt="n",ylab="",xlab="")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+	bty="n",y.intersp=2,col=c("red2","grey50"))#
+mtext(side=3,text="A",line=1,font=2,adj=0,cex=1.25)#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+dev.off()#
+#
+pdf(file=paste("figs/R2s.pdf",sep=""),bg="transparent",width=15,height=6)#
+par(mfrow=c(2,6),mar=c(2,1,2,0),oma=c(4,4,3,1))#
+for (type in 1:2) {#
+	for (m in 1:6) {#
+		plot(y=colTjurs[,m,type],x=colSums(YVAL),xaxt="n",yaxt="n",xlab="",ylab="",main=paste("model",m),ylim=c(0,1))#
+		mtext(side=1, text=paste("min",round(min(colTjurs[,m,type],na.rm=T),2),#
+								 "mean",round(mean(colTjurs[,m,type],na.rm=T),2),#
+								 "max",round(max(colTjurs[,m,type],na.rm=T),2)), cex=0.65,line=0.25)#
+	if (m==1) { #
+		mtext(side=2,text=dimnames(colTjurs)[[3]][type],line=2, font=2) #
+		axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+		}#
+	}#
+}#
+mtext(outer=T,side=1,text="Species Prevalence",line=1.5)#
+mtext(outer=T,side=3,text="Tjur R",line=1.25, cex=1.5)#
+dev.off()#
+#
+pdf(file=paste("figs/2B.pdf",sep=""),bg="transparent",width=7,height=4)#
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=17,col="blue",xlog=T)#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=1.5)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=1.5)#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)#
+dev.off()
+rm(list = ls(all=TRUE)) #
+gc()#
+#
+###########################################################################################
+substrRightRemove <- function(x, n){#
+  substr(x, 1, nchar(x)-n)#
+}#
+#
+computeColTjurR2 <-	function (predArray,Yvalid,rowIDs) {	#
+#
+	p<-predArray[,,1]#
+	nsp<-ncol(p)#
+	rowIDs<-as.factor(rowIDs)	#
+	uniqRowIDs<-unique(rowIDs)#
+#
+	colProbs<-matrix(NA,ncol=nsp)#
+	for (r in uniqRowIDs) {#
+		colProbs<-rbind(colProbs,(1-apply(1-p[which(rowIDs==r,arr.ind=T),], 2, prod)))#
+		}#
+	ColProbs <- colProbs[-1,]	#
+#
+	for (i in 2:dim(predArray)[3]) {#
+		p<-predArray[,,i]#
+		colProbs<-matrix(NA,ncol=nsp)#
+		for (r in uniqRowIDs) {#
+			colProbs<-rbind(colProbs,(1-apply(1-p[which(rowIDs==r,arr.ind=T),], 2, prod)))#
+			}#
+		colProbs<-colProbs[-1,]	#
+    	ColProbs<-ColProbs+colProbs#
+	}#
+	P<-ColProbs/dim(predArray)[3]#
+#
+	Yvalid<-Yvalid[as.character(uniqRowIDs),]#
+#
+    tjurs_0 <- matrix(NA, ncol=ncol(Yvalid), nrow=nrow(Yvalid))    #
+    tjurs_0[which(Yvalid==0,arr.ind=TRUE)] <- P[which(Yvalid==0,arr.ind=TRUE)]#
+    tjurs_0_means <- colMeans(tjurs_0, na.rm=TRUE)#
+    tjurs_1 <- matrix(NA, ncol=ncol(Yvalid), nrow=nrow(Yvalid))    #
+    tjurs_1[which(Yvalid==1,arr.ind=TRUE)] <- P[which(Yvalid==1,arr.ind=TRUE)]#
+    tjurs_1_means <- colMeans(tjurs_1, na.rm=TRUE)#
+    tjurs <- matrix(tjurs_1_means-tjurs_0_means)#
+	colnames(tjurs)<-'tjurR2'#
+	rownames(tjurs)<-paste('sp',1:nrow(tjurs),sep='')#
+#
+	return(tjurs)#
+	print(mean(tjurs,na.rm=T))#
+	}#
+###########################################################################################
+setwd("/Users/anorberg/OneDrive - University of Helsinki/Leivonmaki")#
+###########################################################################################
+#
+Y1<-read.csv(file="data/Y_set1.csv",header=FALSE)#
+Y2<-read.csv(file="data/Y_set2.csv",header=FALSE)#
+Y3<-read.csv(file="data/Y_set3.csv",header=FALSE)#
+Ys<-list(Y1,Y2,Y3)#
+#
+pi3<-read.csv(file="data/Pi_set3.csv",header=FALSE)#
+#
+rowNames3<-read.csv(file="data/rownames_set3.txt",header=FALSE)#
+rowNames3<-apply(rowNames3,2,as.character)#
+rowNames3<-substrRightRemove(rowNames3,5)#
+#
+species<-read.table(file="data/species.txt",header=FALSE)#
+#
+YVAL<-Y3#
+YVAL[is.na(YVAL)]<-1#
+YVAL<-data.frame(as.factor(rowNames3),YVAL)#
+YVAL<-YVAL[which(pi3[,3]=="2014",arr.ind=T),]#
+rownames(YVAL)<-YVAL[,1]#
+YVAL<-YVAL[,-1]
+colTjurs<-array(NA,dim=list(ncol(Y1),7,3))
+dimnames(colTjurs)<-list(species[,1],1:6,c("train","valid","all"))
+dimnames(colTjurs)<-list(species[,1],1:7,c("train","valid","all"))
+colTjurs<-array(NA,dim=list(ncol(Y1),7,3))#
+dimnames(colTjurs)<-list(species[,1],1:7,c("train","valid","all"))
+colTjursNew<-colTjurs
+for (m in 1:7) {#
+	predY1<-read.csv(file=paste("preds/pred_m",m,"_d1.csv",sep=""),header=FALSE)#
+	predY2<-read.csv(file=paste("preds/pred_m",m,"_d2.csv",sep=""),header=FALSE)#
+	predY3<-read.csv(file=paste("preds/pred_m",m,"_d3.csv",sep=""),header=FALSE)#
+#
+	nsp <- ncol(Y3)#
+	nsite<-nrow(Y3)#
+	niter <- ncol(predY1)/nsp#
+#
+	predY1 <- array(as.matrix(predY1), dim=list(nsite,nsp,niter))#
+	predY2 <- array(as.matrix(predY2), dim=list(nsite,nsp,niter))#
+	predY3 <- array(as.matrix(predY3), dim=list(nsite,nsp,niter))#
+#
+	predY1_t<-predY1[1:nrow(Y1),,]#
+	predY1_v<-predY1[(nrow(Y1)+1):nsite,,]#
+	predY2_v<-predY2[1:nrow(Y1),,]#
+	predY2_t<-predY2[(nrow(Y1)+1):nsite,,]#
+#
+	predY_t<-array(NA,dim=list((dim(predY1_t)[1]+dim(predY1_v)[1]),dim(predY1_t)[2],dim(predY1_t)[3]))#
+	predY_v<-array(NA,dim=list((dim(predY1_t)[1]+dim(predY1_v)[1]),dim(predY1_t)[2],dim(predY1_t)[3]))#
+	for (i in 1:dim(predY1_t)[3]) {#
+		predY_t[,,i]<-rbind(predY1_t[,,i],predY2_t[,,i])#
+		predY_v[,,i]<-rbind(predY2_v[,,i],predY1_v[,,i])#
+	}#
+#
+	colTjursNew[,m,1] <- computeColTjurR2(predArray=predY_t,Yvalid=YVAL,rowIDs=rowNames3)#
+	colTjursNew[,m,2] <- computeColTjurR2(predArray=predY_v,Yvalid=YVAL,rowIDs=rowNames3)#
+	colTjursNew[,m,3] <- computeColTjurR2(predArray=predY3,Yvalid=YVAL,rowIDs=rowNames3)#
+}
+colTjurs<-array(NA,dim=list(ncol(Y1),7,3))#
+dimnames(colTjurs)<-list(species[,1],1:7,c("train","valid","all"))#
+colTjursNew<-colTjurs#
+#
+for (m in 1:7) {#
+	predY1<-read.csv(file=paste("preds/pred_m",m,"_d1.csv",sep=""),header=FALSE)#
+	predY2<-read.csv(file=paste("preds/pred_m",m,"_d2.csv",sep=""),header=FALSE)#
+	predY3<-read.csv(file=paste("preds/pred_m",m,"_d3.csv",sep=""),header=FALSE)#
+#
+	nsp <- ncol(Y3)#
+	nsite<-nrow(Y3)#
+	niter <- ncol(predY1)/nsp#
+#
+	predY1 <- array(as.matrix(predY1), dim=list(nsite,nsp,niter))#
+	predY2 <- array(as.matrix(predY2), dim=list(nsite,nsp,niter))#
+	predY3 <- array(as.matrix(predY3), dim=list(nsite,nsp,niter))#
+#
+	predY1_t<-predY1[1:nrow(Y1),,]#
+	predY1_v<-predY1[(nrow(Y1)+1):nsite,,]#
+	predY2_v<-predY2[1:nrow(Y1),,]#
+	predY2_t<-predY2[(nrow(Y1)+1):nsite,,]#
+#
+	predY_t<-array(NA,dim=list((dim(predY1_t)[1]+dim(predY1_v)[1]),dim(predY1_t)[2],dim(predY1_t)[3]))#
+	predY_v<-array(NA,dim=list((dim(predY1_t)[1]+dim(predY1_v)[1]),dim(predY1_t)[2],dim(predY1_t)[3]))#
+	for (i in 1:dim(predY1_t)[3]) {#
+		predY_t[,,i]<-rbind(predY1_t[,,i],predY2_t[,,i])#
+		predY_v[,,i]<-rbind(predY2_v[,,i],predY1_v[,,i])#
+	}#
+#
+	colTjursNew[,m,1] <- computeColTjurR2(predArray=predY_t,Yvalid=YVAL,rowIDs=rowNames3)#
+	colTjursNew[,m,2] <- computeColTjurR2(predArray=predY_v,Yvalid=YVAL,rowIDs=rowNames3)#
+	colTjursNew[,m,3] <- computeColTjurR2(predArray=predY3,Yvalid=YVAL,rowIDs=rowNames3)#
+}
+colMeans(colTjursNew[,,1])
+colMeans(colTjursNew[,,2])
+colMeans(colTjursNew[,,1])
+colMeans(colTjursNew[,,2])
+colMeans(colTjursNew[,,3])
+par(mfrow=c(3,7),mar=c(2,1,2,0),oma=c(4,4,3,1))#
+for (type in 1:3) {#
+	for (m in 1:7) {#
+		plot(y=colTjurs[,m,type],x=colSums(YVAL),xaxt="n",yaxt="n",xlab="",ylab="",main=paste("model",m),ylim=c(0,1))#
+		mtext(side=1, text=paste("min",round(min(colTjurs[,m,type],na.rm=T),2),#
+								 "mean",round(mean(colTjurs[,m,type],na.rm=T),2),#
+								 "max",round(max(colTjurs[,m,type],na.rm=T),2)), cex=0.65,line=0.25)#
+	if (m==1) { #
+		mtext(side=2,text=dimnames(colTjurs)[[3]][type],line=2, font=2) #
+		axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+		}#
+	}#
+}#
+mtext(outer=T,side=1,text="Species Prevalence",line=1.5)#
+mtext(outer=T,side=3,text="Tjur R",line=1.25, cex=1.5)
+warnings()
+colTjurs<-colTjursNew
+par(mfrow=c(3,7),mar=c(2,1,2,0),oma=c(4,4,3,1))#
+for (type in 1:3) {#
+	for (m in 1:7) {#
+		plot(y=colTjurs[,m,type],x=colSums(YVAL),xaxt="n",yaxt="n",xlab="",ylab="",main=paste("model",m),ylim=c(0,1))#
+		mtext(side=1, text=paste("min",round(min(colTjurs[,m,type],na.rm=T),2),#
+								 "mean",round(mean(colTjurs[,m,type],na.rm=T),2),#
+								 "max",round(max(colTjurs[,m,type],na.rm=T),2)), cex=0.65,line=0.25)#
+	if (m==1) { #
+		mtext(side=2,text=dimnames(colTjurs)[[3]][type],line=2, font=2) #
+		axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+		}#
+	}#
+}#
+mtext(outer=T,side=1,text="Species Prevalence",line=1.5)#
+mtext(outer=T,side=3,text="Tjur R",line=1.25, cex=1.5)
+pdf(file=paste("figs/R2sNew.pdf",sep=""),bg="transparent",width=15,height=6)#
+par(mfrow=c(3,7),mar=c(2,1,2,0),oma=c(4,4,3,1))#
+for (type in 1:3) {#
+	for (m in 1:7) {#
+		plot(y=colTjurs[,m,type],x=colSums(YVAL),xaxt="n",yaxt="n",xlab="",ylab="",main=paste("model",m),ylim=c(0,1))#
+		mtext(side=1, text=paste("min",round(min(colTjurs[,m,type],na.rm=T),2),#
+								 "mean",round(mean(colTjurs[,m,type],na.rm=T),2),#
+								 "max",round(max(colTjurs[,m,type],na.rm=T),2)), cex=0.65,line=0.25)#
+	if (m==1) { #
+		mtext(side=2,text=dimnames(colTjurs)[[3]][type],line=2, font=2) #
+		axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+		}#
+	}#
+}#
+mtext(outer=T,side=1,text="Species Prevalence",line=1.5)#
+mtext(outer=T,side=3,text="Tjur R",line=1.25, cex=1.5)#
+dev.off()
+save(colTjursNew,file="preds/colTjursNew.RData")
+dim(colTjurs)
+colTjurs<-colTjursNew[,-4,]#
+dim(colTjurs)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",,main="Predictive performance",#
+		xaxt="n",yaxt="n",ylab="",xlab="")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+	bty="n",y.intersp=2,col=c("red2","grey50"))#
+mtext(side=3,text="A",line=1,font=2,adj=0,cex=1.25)#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=17,col="blue",xlog=T)#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=1.5)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=1.5)#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)
+colSums(YVAL)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=17,col="blue",xlog=T)#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",,main="Predictive performance",#
+		xaxt="n",yaxt="n",ylab="",xlab="")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="red2",pch=16,cex=1.25)#
+axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+	bty="n",y.intersp=2,col=c("red2","grey50"))#
+mtext(side=3,text="A",line=1,font=2,adj=0,cex=1.25)#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)
+colMeans(colTjursNew[,,1])
+colMeans(colTjursNew[,,2])
+dim(colTjurs)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+points(colTjurs[,1,2],x=colSums(YVAL),pch=17,col="blue",xlog=T)#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+for (i in 1:dim(colTjurs)[1]) {#
+	lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),pch=25,col="blue")#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=1.5)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=1.5)#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",,main="Predictive performance",#
+		xaxt="n",yaxt="n",ylab="",xlab="")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="white",pch=16,cex=1.25,bg="red2")#
+axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+	bty="n",y.intersp=2,col=c("red2","grey50"))#
+mtext(side=3,text="A",line=1,font=2,adj=0,cex=1.25)#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",,main="Predictive performance",#
+		xaxt="n",yaxt="n",ylab="",xlab="")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="white",pch=21,cex=1.25,bg="red2")#
+axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+	bty="n",y.intersp=2,col=c("red2","grey50"))#
+mtext(side=3,text="A",line=1,font=2,adj=0,cex=1.25)#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",,main="Predictive performance",#
+		xaxt="n",yaxt="n",ylab="",xlab="")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="white",pch=21,cex=1.5,bg="red2")#
+axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+	bty="n",y.intersp=2,col=c("red2","grey50"))#
+mtext(side=3,text="A",line=1,font=2,adj=0,cex=1.25)#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)
+which(colTjurs[,1,2]>colTjurs[,1,6])
+colTjurs[,1,6]
+colTjurs
+colTjurs[,1,2]
+colTjurs[,1,6]
+dim(colTjurs)
+which(colTjurs[,1,2]>colTjurs[,6,2])
+which(colTjurs[,1,2]>colTjurs[,6,2],arr.ind=T)
+points(colTjurs[which(colTjurs[,1,2]>colTjurs[,6,2],arr.ind=T),1,2],x=colSums(YVAL)[which(colTjurs[,1,2]>colTjurs[,6,2],arr.ind=T)],pch=25,bg="red2",col="red2",xlog=T)
+points(colTjurs[which(colTjurs[,1,2]<=colTjurs[,6,2],arr.ind=T),1,2],x=colSums(YVAL)[which(colTjurs[,1,2]<=colTjurs[,6,2],arr.ind=T)],pch=25,bg="blue2",col="blue2",xlog=T)
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x")#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+#
+points(colTjurs[which(colTjurs[,1,2]>colTjurs[,6,2],arr.ind=T),1,2],#
+		x=colSums(YVAL)[which(colTjurs[,1,2]>colTjurs[,6,2],arr.ind=T)],pch=24,bg="red2",col="red2",xlog=T)#
+points(colTjurs[which(colTjurs[,1,2]<=colTjurs[,6,2],arr.ind=T),1,2],#
+		x=colSums(YVAL)[which(colTjurs[,1,2]<=colTjurs[,6,2],arr.ind=T)],pch=25,bg="blue2",col="blue2",xlog=T)
+any(i==pos)
+pos<-which(colTjurs[,1,2]>colTjurs[,6,2],arr.ind=T)#
+neg<-which(colTjurs[,1,2]<=colTjurs[,6,2],arr.ind=T)
+any(i==pos)
+for (i in 1:dim(colTjurs)[1]) {#
+	if (any(i==pos)) { lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),col="red2")#
+	} else { lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),col="blue2") }#
+}
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x",type="n")#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)
+points(colTjurs[pos,1,2],x=colSums(YVAL)[pos],pch=24,bg="red2",col="red2",xlog=T)#
+points(colTjurs[neg,1,2],x=colSums(YVAL)[neg],pch=25,bg="blue2",col="blue2",xlog=T)#
+points(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xlog=T,pch=16)
+points(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xlog=T)
+for (i in 1:dim(colTjurs)[1]) {#
+	if (any(i==pos)) { lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),col="red2")#
+	} else { lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),col="blue2") }#
+}
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=1.5)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=1.5)#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)
+pdf(file=paste("figs/R2sNew.pdf",sep=""),bg="transparent",width=15,height=6)#
+par(mfrow=c(3,7),mar=c(2,1,2,0),oma=c(4,4,3,1))#
+for (type in 1:3) {#
+	for (m in 1:7) {#
+		plot(y=colTjurs[,m,type],x=colSums(YVAL),xaxt="n",yaxt="n",xlab="",ylab="",main=paste("model",m),ylim=c(0,1))#
+		mtext(side=1, text=paste("min",round(min(colTjurs[,m,type],na.rm=T),2),#
+								 "mean",round(mean(colTjurs[,m,type],na.rm=T),2),#
+								 "max",round(max(colTjurs[,m,type],na.rm=T),2)), cex=0.65,line=0.25)#
+	if (m==1) { #
+		mtext(side=2,text=dimnames(colTjurs)[[3]][type],line=2, font=2) #
+		axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+		}#
+	}#
+}#
+mtext(outer=T,side=1,text="Species Prevalence",line=1.5)#
+mtext(outer=T,side=3,text="Tjur R",line=1.25, cex=1.5)#
+dev.off()#
+#
+pdf(file=paste("figs/2A.pdf",sep=""),bg="transparent",width=7,height=4)#
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(matrix(colTjurs[,,2],ncol=1),x=rep(1:6,each=dim(colTjurs)[1]),pch=16,cex=1,col="grey50",,main="Predictive performance",#
+		xaxt="n",yaxt="n",ylab="",xlab="")#
+points(colMeans(colTjurs[,,2]),x=1:6,col="white",pch=21,cex=1.5,bg="red2")#
+axis(side=1, at=1:6, labels=paste("Model",1:6), tick=F)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+legend("bottomright", inset=c(-0.275,0), legend=c("Mean\nover species","Individual\nspecies"),pch=16,#
+	bty="n",y.intersp=2,col=c("red2","grey50"))#
+mtext(side=3,text="A",line=1,font=2,adj=0,cex=1.25)#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+dev.off()#
+#
+pos<-which(colTjurs[,1,2]>colTjurs[,6,2],arr.ind=T)#
+neg<-which(colTjurs[,1,2]<=colTjurs[,6,2],arr.ind=T)#
+pdf(file=paste("figs/2B.pdf",sep=""),bg="transparent",width=7,height=4)#
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x",type="n")#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+points(colTjurs[pos,1,2],x=colSums(YVAL)[pos],pch=24,bg="red2",col="red2",xlog=T)#
+points(colTjurs[neg,1,2],x=colSums(YVAL)[neg],pch=25,bg="blue2",col="blue2",xlog=T)#
+points(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xlog=T)#
+for (i in 1:dim(colTjurs)[1]) {#
+	if (any(i==pos)) { lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),col="red2")#
+	} else { lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),col="blue2") }#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=1.5)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=1.5)#
+legend("bottomright", inset=c(-0.225,0), legend=c("Model 6","Model 1"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)#
+dev.off()
+pos<-which(colTjurs[,1,2]>colTjurs[,6,2],arr.ind=T)#
+neg<-which(colTjurs[,1,2]<=colTjurs[,6,2],arr.ind=T)#
+pdf(file=paste("figs/2B.pdf",sep=""),bg="transparent",width=7,height=4)#
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x",type="n")#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+points(colTjurs[pos,1,2],x=colSums(YVAL)[pos],pch=24,bg="red2",col="red2",xlog=T)#
+points(colTjurs[neg,1,2],x=colSums(YVAL)[neg],pch=25,bg="blue2",col="blue2",xlog=T)#
+points(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xlog=T)#
+for (i in 1:dim(colTjurs)[1]) {#
+	if (any(i==pos)) { lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),col="red2")#
+	} else { lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),col="blue2") }#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=1.5)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=1.5)#
+legend("bottomright", inset=c(-0.225,0), legend=c("Best model","Null odel"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)#
+dev.off()
+pos<-which(colTjurs[,1,2]>colTjurs[,6,2],arr.ind=T)#
+neg<-which(colTjurs[,1,2]<=colTjurs[,6,2],arr.ind=T)#
+pdf(file=paste("figs/2B.pdf",sep=""),bg="transparent",width=7,height=4)#
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x",type="n")#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+points(colTjurs[pos,1,2],x=colSums(YVAL)[pos],pch=24,bg="red2",col="red2",xlog=T)#
+points(colTjurs[neg,1,2],x=colSums(YVAL)[neg],pch=25,bg="blue2",col="blue2",xlog=T)#
+points(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xlog=T)#
+for (i in 1:dim(colTjurs)[1]) {#
+	if (any(i==pos)) { lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),col="red2")#
+	} else { lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),col="blue2") }#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=1.5)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=1.5)#
+legend("bottomright", inset=c(-0.25,0), legend=c("Best model","Null model"),pch=16,#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)#
+dev.off()
+pos<-which(colTjurs[,1,2]>colTjurs[,6,2],arr.ind=T)#
+neg<-which(colTjurs[,1,2]<=colTjurs[,6,2],arr.ind=T)#
+pdf(file=paste("figs/2B.pdf",sep=""),bg="transparent",width=7,height=4)#
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x",type="n")#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+points(colTjurs[pos,1,2],x=colSums(YVAL)[pos],pch=24,bg="red2",col="red2",xlog=T)#
+points(colTjurs[neg,1,2],x=colSums(YVAL)[neg],pch=25,bg="blue2",col="blue2",xlog=T)#
+points(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xlog=T)#
+for (i in 1:dim(colTjurs)[1]) {#
+	if (any(i==pos)) { lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),col="red2")#
+	} else { lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),col="blue2") }#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=1.5)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=1.5)#
+legend("bottomright", inset=c(-0.25,0), legend=c("Best model","Null model"),pch=c(16,17),#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)#
+dev.off()
+pos<-which(colTjurs[,1,2]>=colTjurs[,6,2],arr.ind=T)#
+neg<-which(colTjurs[,1,2]<colTjurs[,6,2],arr.ind=T)#
+pdf(file=paste("figs/2B.pdf",sep=""),bg="transparent",width=7,height=4)#
+par(mar=c(3,3,3,7),xpd=TRUE)#
+plot(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xaxt="n",yaxt="n",ylab="",xlab="",main="Performance of the best model",log="x",type="n")#
+axis(side=2, at=c(0,1), labels=c(0,1), tick=F, las=2)#
+mtext(text=expression("Tjur" ~ R^{2}), side=2, line=1)#
+mtext(text="Species prevalence", side=1, line=1)#
+points(colTjurs[pos,1,2],x=colSums(YVAL)[pos],pch=24,bg="red2",col="red2",xlog=T)#
+points(colTjurs[neg,1,2],x=colSums(YVAL)[neg],pch=25,bg="blue2",col="blue2",xlog=T)#
+points(colTjurs[,6,2],x=colSums(YVAL),pch=16,ylim=c(0,1),xlog=T)#
+for (i in 1:dim(colTjurs)[1]) {#
+	if (any(i==pos)) { lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),col="red2")#
+	} else { lines(c(colTjurs[i,1,2],colTjurs[i,6,2]),x=rep(colSums(YVAL)[i],2),col="blue2") }#
+}#
+lines(predict(lm(colTjurs[,6,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),lwd=1.5)#
+lines(predict(lm(colTjurs[,1,2]~log(colSums(YVAL)))),x=(colSums(YVAL)),col="blue",lwd=1.5)#
+legend("bottomright", inset=c(-0.25,0), legend=c("Best model","Null model"),pch=c(16,17),#
+		bty="n",y.intersp=2,col=c("black","blue"))#
+	mtext(side=3,text="B",line=1,font=2,adj=0,cex=1.25)#
+dev.off()
+rm(list = ls(all=TRUE)) #
+gc()#
+#
+# remove this part for the github version#
+###########################################################################################
+#
+info<-Sys.info()#
+if (substr(info[4],1,3)=="LM7" | substr(info[4],1,5)=="staff"){#
+	SETT<-"~/OneDrive - University of Helsinki/bakeoff/pipeline/SCRIPTS/mySettings.r"#
+} else {#
+	SETT<-"D:/HY-data/NORBERG/OneDrive - University of Helsinki/bakeoff/pipeline/SCRIPTS/mySettings.r"#
+}#
+#
+###########################################################################################
+#
+#SETT<-".../bakeoff/pipeline/settings.r"#
+source(SETT)#
+setwd(WD)#
+#
+# install required packages#
+	# install.packages(c("pROC","mvabund","MultivariateRandomForest","randomForest","caret",#
+						# "e1071","gbm","dismo","yaImpute","earth","devtools","glmnet",#
+						# "boral","gjam","spaMM","nlme","MASS","spaMM","vegan","BayesComm"))#
+	# require(devtools)#
+	# install_github("davharris/mistnet2")#
+#
+	# mac#
+		# install.packages("doMC")#
+		# install.packages(paste(WD,"MODELS/mvpart_pkg/mvpart_1.6-2.tar",sep=''), repos = NULL, type="source")#
+	# windows#
+		# install.packages("doParallel")#
+		# install.packages(paste(WD,"MODELS/mvpart_pkg/mvpart_1.6-2.zip",sep=''), repos = NULL, type="source")
+sz<-1	# small
+d<-1#
+set_no <- Sets[d]#
+source(readdata)
+require(spaMM)#
+#
+###########################################################################################
+#
+if (set_no=="birds" | set_no=="butterfly" | set_no=="plant") { #
+	form <- as.formula(sp~IC+V1+V2+V3+V4+V5+V1_2+V2_2+V3_2+V4_2+V5_2)#
+	form2 <- as.formula(sp~IC+V1+V2+V3+V4+V5+V1_2+V2_2+V3_2+V4_2+V5_2+Rand1+(Rand1^2)+Rand2+(Rand2^2))#
+	form_spat <- as.formula(sp~IC+V1+V2+V3+V4+V5+V1_2+V2_2+V3_2+V4_2+V5_2+Matern(1|Rand1+Rand2))#
+}#
+if (set_no=="trees") { #
+	form <- as.formula(sp~IC+V1+V2+V3+V1_2+V2_2+V3_2)#
+	form2 <- as.formula(sp~IC+V1+V2+V3+V1_2+V2_2+V3_2+Rand1+(Rand1^2)+Rand2+(Rand2^2))#
+	form_spat <- as.formula(sp~IC+V1+V2+V3+V1_2+V2_2+V3_2+Matern(1|Rand1+Rand2))#
+}#
+if (set_no=="vegetation") { #
+	form <- as.formula(sp~IC+V1+V2+V3+V4+V1_2+V2_2+V3_2+V4_2)#
+	form2 <- as.formula(sp~IC+V1+V2+V3+V4+V1_2+V2_2+V3_2+V4_2+Rand1+(Rand1^2)+Rand2+(Rand2^2))#
+	form_spat <- as.formula(sp~IC+V1+V2+V3+V4+V1_2+V2_2+V3_2+V4_2+Matern(1|Rand1+Rand2))#
+}
+j<-1
+nsp <- length(DD_t[[j]])#
+	spaMM <- list()#
+	spaMM_spat <- list()
+i<-1
+tmp	<-	corrHLfit(form_spat, family=binomial(link = "probit"), data=DD_t[[j]][[i]])
+?corrHLfit
+tmp	<-	corrHLfit(form_spat, family=binomial(link = "probit"), data=DD_t[[j]][[i]])
+crs
+tmp	<-	corrHLfit(form_spat, family=binomial(link = "probit"), data=DD_t[[j]][[i]],nb_cores=crs)
+tmp	<-	corrHLfit(form_spat, family=binomial(link = "probit"), data=DD_t[[j]][[i]],nb_cores=crs,ranFix=list(nu=0.5))
+Yt <- mvabund(y_train[[j]])#
+	Xt <- data.frame(x_train[[j]][,-1])#
+	Xts <- data.frame(cbind(x_train[[j]][,-1],s_train[[j]]))
+require(mvabund)
+Yt <- mvabund(y_train[[j]])#
+	Xt <- data.frame(x_train[[j]][,-1])#
+	Xts <- data.frame(cbind(x_train[[j]][,-1],s_train[[j]]))
+require(pROC)#
+require(MultivariateRandomForest)#
+source(paste(MD,"modify_mvrf.r",sep=""))
+?build_forest_predict
+rm(list = ls(all=TRUE)) #
+gc()#
+#
+# remove this part for the github version#
+###########################################################################################
+#
+info<-Sys.info()#
+if (substr(info[4],1,3)=="LM7" | substr(info[4],1,5)=="staff"){#
+	SETT<-"~/OneDrive - University of Helsinki/bakeoff/pipeline/SCRIPTS/mySettings.r"#
+} else {#
+	SETT<-"D:/HY-data/NORBERG/OneDrive - University of Helsinki/bakeoff/pipeline/SCRIPTS/mySettings.r"#
+}
+#SETT<-".../bakeoff/pipeline/settings.r"#
+source(SETT)#
+setwd(WD)#
+#
+# install required packages#
+	# install.packages(c("pROC","mvabund","MultivariateRandomForest","randomForest","caret",#
+						# "e1071","gbm","dismo","yaImpute","earth","devtools","glmnet",#
+						# "boral","gjam","spaMM","nlme","MASS","spaMM","vegan","BayesComm"))#
+	# require(devtools)#
+	# install_github("davharris/mistnet2")#
+#
+	# mac#
+		# install.packages("doMC")#
+		# install.packages(paste(WD,"MODELS/mvpart_pkg/mvpart_1.6-2.tar",sep=''), repos = NULL, type="source")#
+	# windows#
+		# install.packages("doParallel")#
+		# install.packages(paste(WD,"MODELS/mvpart_pkg/mvpart_1.6-2.zip",sep=''), repos = NULL, type="source")#
+#
+###########################################################################################
+#
+# data size#
+sz<-1	# small
+d<-3
+set_no <- Sets[d]#
+source(readdata)
+dim(y_train[[1]])
+d<-2
+dim(y_train[[1]])
+d<-2#
+set_no <- Sets[d]#
+source(readdata)#
+#
+dim(y_train[[1]])
+d<-4#
+set_no <- Sets[d]#
+source(readdata)#
+#
+dim(y_train[[1]])
+d<-5#
+set_no <- Sets[d]#
+source(readdata)#
+#
+dim(y_train[[1]])
+d<-2#
+set_no <- Sets[d]#
+source(readdata)#
+#
+dim(y_train[[1]])
+d<-3#
+set_no <- Sets[d]#
+source(readdata)#
+#
+dim(y_train[[1]])
+d<-2#
+set_no <- Sets[d]#
+source(readdata)#
+#
+dim(y_train[[1]])
+rm(list = ls(all=TRUE)) #
+gc()#
+#
+info<-Sys.info()#
+if (substr(info[4],1,3)=="LM7" | substr(info[4],1,5)=="staff"){#
+	SETT<-"~/OneDrive - University of Helsinki/bakeoff/pipeline/SCRIPTS/mySettings.r"#
+} else {#
+	SETT<-"D:/HY-data/NORBERG/OneDrive - University of Helsinki/bakeoff/pipeline/SCRIPTS/mySettings.r"#
+}#
+#
+source(SETT)#
+setwd(WD)#
+#
+# data size#
+#sz<-1	# small#
+#sz<-2	# large#
+#sz<-3	# custom#
+#customData<-list(100,10)	# [[1]] #sampling units [[2]] #species#
+#
+#for (sz in 1:2) {	# loop over data sizes#
+#
+#	for (d in 1:length(Sets)) {	# loop over data sets#
+#
+sz<-1#
+d<-1#
+#
+		set_no <- Sets[d]#
+		source(readdata)#
+#
+		rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+rm(list = ls(all=TRUE)) #
+gc()#
+#
+info<-Sys.info()#
+if (substr(info[4],1,3)=="LM7" | substr(info[4],1,5)=="staff"){#
+	SETT<-"~/OneDrive - University of Helsinki/bakeoff/pipeline/SCRIPTS/mySettings.r"#
+} else {#
+	SETT<-"D:/HY-data/NORBERG/OneDrive - University of Helsinki/bakeoff/pipeline/SCRIPTS/mySettings.r"#
+}#
+#
+source(SETT)#
+setwd(WD)#
+#
+# data size#
+#sz<-1	# small#
+#sz<-2	# large#
+#sz<-3	# custom#
+#customData<-list(100,10)	# [[1]] #sampling units [[2]] #species#
+#
+#for (sz in 1:2) {	# loop over data sizes#
+#
+#	for (d in 1:length(Sets)) {	# loop over data sets#
+#
+sz<-1#
+d<-1
+set_no <- Sets[d]#
+		source(readdata)
+source(modpreds)
