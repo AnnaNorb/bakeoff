@@ -8,8 +8,9 @@ The pipeline includes importing and formatting the data, fitting the models, pro
 on validation data.
 
 All the scripts sourced, the data used and the folder structure are available in Github: AnnaNorb/bakeoff.
-For the pipeline to run smoothly, the user needs to download or otherwise construct
-an indentical folder structure and have the data in its appropriate location.
+For the pipeline to run smoothly, the required folder structure is created as a part of the pipeline
+to the location indicated by the user. Be sure, that the location of the pipeline (where it is downloaded),
+is also a location where additional results folders can be created and results saved in the end.
 
 For the method HMSC, all models are fitted and predictions are made in Matlab.
 This R pipeline assumes that these steps have already been done. 
@@ -18,43 +19,59 @@ For this, see the document 'bakeoffHMSCvignette'.
 
 **1 Preparations**
 
-First clean the workspace and define the path for the location of the 'settings.r' script, 
-which defines the paths to all files of the pipeline.
+First clean the workspace. 
 
 ```
 rm(list = ls(all=TRUE)) 
 gc()
 
-SETT<-".../bakeoff/pipeline/scripts/settings.r"
-source(SETT)
-setwd(WD)
 ```
-
 Then indicate your operating system: "osx" for macOS, or "win" for Windows.
 ```
 OS<-"osx"
 #OS<-"win"
 ```
+Define the path for the location of the 'settings.r' script, which defines the paths 
+to all files of the pipeline and runs a series of setting. 
+```
+SETT<-".../bakeoff/pipeline/SCRIPTS/settings.r"
+source(SETT)
+setwd(WD)
+```
+Next we will create the results folders unless they already exist, in which case the following
+lines can be ignored. If the folder structure exists and the following lines are ran, 
+some warnings are produced, which can be ignored.
+```
+dir.create(PD2)
+dir.create(RD)
+for (set in Sets) {
+	dir.create(paste(RD,set,sep=""))
+	}
+dir.create(RDfinal)
+dir.create(paste(RDfinal,"300/",sep=""))
+dir.create(paste(RDfinal,"600/",sep=""))
+dir.create(paste(RDfinal,"custom/",sep=""))
+```
 
-Next the user should check whether she has the required packages installed already and install the ones missing. 
+The user should check whether she has the required packages installed already and install the ones missing. 
 With the command below, all the required packages are downloaded, along with their dependencies.
 
 ```
-# install required packages
-	install.packages(c("pROC","mvabund","MultivariateRandomForest","randomForest","caret",
-						"e1071","gbm","dismo","yaImpute","earth","devtools","glmnet",
-						"boral","gjam","spaMM","nlme","MASS","spaMM","vegan","BayesComm"))
-	require(devtools)
-	install_github("davharris/mistnet2")
+install.packages(c("pROC","mvabund","MultivariateRandomForest","randomForest","caret",
+					"e1071","gbm","dismo","yaImpute","earth","devtools","glmnet",
+					"boral","gjam","spaMM","nlme","MASS","spaMM","vegan","BayesComm"))
+require(devtools)
+install_github("davharris/mistnet2")
 
-if (OS=="osx") {
-		install.packages("doMC")
-		install.packages(paste(WD,"MODELS/mvpart_pkg/mvpart_1.6-2.tar",sep=''), repos = NULL, type="source")
-		}
-if (OS=="win") {
-		install.packages("doParallel")
-		install.packages(paste(WD,"MODELS/mvpart_pkg/mvpart_1.6-2.zip",sep=''), repos = NULL, type="source")
+if (OS=="osx") { 
+	install.packages("doMC")
+	install.packages(paste(WD,"MODELS/mvpart_pkg/mvpart_1.6-2.tar",sep=''), repos = NULL, type="source") 
 	}
+if (OS=="win") {
+	install.packages("doParallel")
+	install.packages(paste(WD,"MODELS/mvpart_pkg/mvpart_1.6-2.zip",sep=''), repos = NULL, type="source")
+	}
+
 ```
 The 'mvpart' package is available from the CRAN archive (https://cran.r-project.org/src/contrib/Archive/mvpart/), 
 and it can be downloaded from there, but it is included in the pipeline, and can hence be installed using the lines below.
@@ -62,9 +79,17 @@ and it can be downloaded from there, but it is included in the pipeline, and can
 Species archetypes models are provided as a source code along with the pipeline (".../pipeline/MODELS/sam/source"). 
 The code is sourced within the model fitting prcedure.
 
-Finally select the number of cores you wish to use in parallel computing.
+Then select the number of cores you wish to use in parallel computing and set the clusters.
 ```	
-	crs<-4
+crs<-4
+if (OS=="osx") {
+	require(doParallel)
+	registerDoParallel(cl=makeCluster(crs))
+}
+if (OS=="win") {
+	require(doMC)
+	registerDoMC(cores=crs)
+}
 ```
 
 \vspace{10mm}
@@ -120,85 +145,85 @@ for (d in 1:length(Sets)) {	# loop over data sets
 	###################
 
 	# ss GLM 1
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.glm.r",sep=""))
 
 	# ss GLM 2
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.glmmPQL.r",sep=""))
 
 	# ss GLM 3
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.spaMM.r",sep=""))
 	
 	# TRAITGLM
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.traitglm.r",sep=""))
 	  
 	# GAM
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.gam.r",sep=""))
 
 	# BRT
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.brt.r",sep=""))
   
 	# SVM
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.svm.r",sep=""))
 	
 	# RFs
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.rf.r",sep=""))
 	
 	# GNNs
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.gnn.r",sep=""))
 	
 	# MRTs
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.mrt.r",sep=""))
 	  
 	# MARS
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.mars.r",sep=""))
 		
 	# GJAMS
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.gjam.r",sep=""))
 	
 	# BORAL
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.boral.r",sep=""))
 
 	# SAMs
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.sam.r",sep=""))
 
 	# mistnet
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.mistnet.r",sep=""))
 	  
 	# SPBAYES
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.spbayes.r",sep=""))
 
 	# BayesComm
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.bc.r",sep=""))
 
 	# MVRF
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.mvrf.r",sep=""))
 
 	# ssHMSC
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.hmsc.ss.r",sep=""))
 
 	# HMSC
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(readdata); setwd(WD)
 	source(paste(PD,"predict.hmsc.all.r",sep=""))	
-	
+
 	}
 
 ```
@@ -208,9 +233,7 @@ for (d in 1:length(Sets)) {	# loop over data sets
 
 Finally we produce the measures for evaluating the predictive performance of the modelling frameworks and their variants.
 ```
-rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT)
-gc()
-setwd(WD)
+rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); setwd(WD)
 
 # data size
 sz<-1	# small
@@ -224,28 +247,27 @@ for (d in 1:length(Sets)) {	# loop over data sets
 	source(readdata)
 	source(modpreds)		
 
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata); setwd(WD)
 	source(paste(RD,"aucs.r",sep=""))
 
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata); setwd(WD)
 	source(paste(RD,"liks.r",sep=""))
 
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata); setwd(WD)
 	source(paste(RD,"mse.r",sep=""))
 
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata); setwd(WD)
 	source(paste(RD,"spearm.r",sep=""))
 
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata); setwd(WD)
 	source(paste(RD,"sds.r",sep=""))
 
-	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata)
+	rm(list=ls()[!(ls() %in% saveobjs)]); gc(); source(SETT); source(readdata); setwd(WD)
 	source(paste(RD,"p50.r",sep=""))
 
 	}	
 ```
-	
-library("rmarkdown")
-setwd("~/OneDrive - University of Helsinki/bakeoff/pipeline/SCRIPTS")
-rmarkdown::render("vignette.Rmd","pdf_document")
 
+library("rmarkdown")
+setwd(".../bakeoff/pipeline/")
+rmarkdown::render("vignette.Rmd","pdf_document")

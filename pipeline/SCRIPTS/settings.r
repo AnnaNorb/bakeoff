@@ -5,6 +5,12 @@
 dataN<-c(300,600,'custom')	# data sizes
 REPs<-100					# no. of prediction replicates
 
+
+# data sets
+##########################################################################################
+Sets <- c("birds","butterfly","plant","trees","vegetation")
+
+
 # basic working directories
 ##########################################################################################
 
@@ -35,20 +41,7 @@ RD2 <- paste(WD,"RESULTS2/",sep="")
 # final results directory
 RDfinal <- paste(WD,"RESULTS_final/",sep="")
 
-DIRS<-list(DD,MD,FD,PD,PD2,RD,RD2,RDfinal)
-
-
-# settings for parallel looping
-##########################################################################################
-
-if (OS=="osx") {
-	require(doParallel)
-	registerDoParallel(cl=makeCluster(crs))
-}
-if (OS=="win") {
-	require(doMC)
-	registerDoMC(cores=crs)
-}
+DIRS<-list(WD,WD2,DD,MD,FD,PD,PD2,RD,RD2,RDfinal)
 
 
 # read data
@@ -63,13 +56,12 @@ modpreds<-paste(WD,"SCRIPTS/modify.preds.r",sep="")
 
 # save objects
 ##########################################################################################
-saveobjs<-c('sz','d','set_no','REPs','SETT','readdata','comTimes','dataN','saveobjs','crs')
+saveobjs<-c("sz","d","set_no","REPs","SETT","readdata","modpreds","dataN","saveobjs","crs","Sets",
+			"WD","WD2","DD","MD","FD","PD","PD2","RD","RD2","RDfinal")
 
-# data sets
-##########################################################################################
-Sets <- c("birds","butterfly","plant","trees","vegetation")
 
 # models
+##########################################################################################
 mod_names <- list("GAM","GAM2","GAMspat1","GAMspat2",
 				"GLM","GLM2",
 				"GLMPQL","GLMPQL2","GLMPQLspat",
@@ -119,9 +111,6 @@ pred_names	<-	list("gam_PAs_","gam2_PAs_","gam_spat1_PAs_","gam_spat2_PAs_",
 				"bc1_PAs_","bc2_PAs_",
 				"ss_hmsc1_PAs_","ss_hmsc2_PAs_",
 				"hmsc1_PAs_","hmsc2_PAs_","hmsc3_PAs_","hmsc4_PAs_")
-
-pred_comms <- list()
-
 
 ##########################################################################################
 
