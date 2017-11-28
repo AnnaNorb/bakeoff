@@ -1,15 +1,15 @@
 ##########################################################################################
-# SETTINGS
+# PATHS, ASSIGNMENTS, ETC.
 ##########################################################################################
 
-REPs<-100
-nsamp <- REPs
+dataN<-c(300,600,'custom')	# data sizes
+REPs<-100					# no. of prediction replicates
 
 # basic working directories
 ##########################################################################################
-WD<-"~/OneDrive - University of Helsinki/bakeoff/pipeline/"
-#WD <- "..." # the location of the pipeline
-#WD2 <- "..." # the location of the results produced with HMSC (see 'HMSCvignette')
+
+WD <- substr(SETT, 1, nchar(SETT)-18)
+WD2 <- paste(WD,"HMSC-ELE/bakeoff/",sep="")
 
 # data directory
 DD <- paste(WD,"DATA/",sep="")
@@ -41,45 +41,55 @@ DIRS<-list(DD,MD,FD,PD,PD2,RD,RD2,RDfinal)
 # settings for parallel looping
 ##########################################################################################
 
-# MAC
-library('doMC')
-crs<-4
-registerDoMC(cores=crs)
-
-# PC
-#library('doParallel')
-#crs<-4
-#registerDoParallel(cl=makeCluster(crs))
+if (OS=="osx") {
+	require(doParallel)
+	registerDoParallel(cl=makeCluster(crs))
+}
+if (OS=="win") {
+	require(doMC)
+	registerDoMC(cores=crs)
+}
 
 
 # read data
 ##########################################################################################
-readdata<-paste(WD,"read.data.r",sep="")
+readdata<-paste(WD,"SCRIPTS/read.data.r",sep="")
+
+
+# calculate occ probs, sp rich, beta indices
+##########################################################################################
+modpreds<-paste(WD,"SCRIPTS/modify.preds.r",sep="")
+
 
 # save objects
 ##########################################################################################
-saveobjs<-c('d','set_no','SETT','readdata','comTimes','saveobjs')
+saveobjs<-c('sz','d','set_no','REPs','SETT','readdata','comTimes','dataN','saveobjs','crs')
 
 # data sets
 ##########################################################################################
-Sets <- c("butterfly","bird","diatom","tree","plant","fungi")
+Sets <- c("birds","butterfly","plant","trees","vegetation")
 
 # models
-##########################################################################################
-mod_names <- list("GAM","GAM_spat1","GAM_spat2",
-				"GLM","GLM_PQL","GLM_PQL_spat","SPAMM","SPAMM_spat",
-				"MVABUND",
-				"MRTS","MRTS_spat",
-				"GNN",
-				"RF",
-				"BRT",
-				"SVM",
-				"MARS-COMM","MARS-INT",
-				"MVRF",
-				"GJAM",
-				"SAM",
-				"MISTN",
-				"HMSC_ss","HMSC", "HMSC_re", "HMSC_spat")
+mod_names <- list("GAM","GAM2","GAMspat1","GAMspat2",
+				"GLM","GLM2",
+				"GLMPQL","GLMPQL2","GLMPQLspat",
+				"SPAMM","SPAMM2",
+				"SPAMMspat",
+				"MVABUND1", "MVABUND2","MVABUND3",
+				"MRTS1","MRTS2",
+				"GNN1","GNN2",
+				"RF", "RF2",
+				"BRT","BRT2",
+				"SVM","SVM2",
+				"MARS_COMM1","MARS_COMM2","MARS_INT1","MARS_INT2",
+				"MVRF1", "MVRF2",
+				"GJAM1","GJAM2",
+				"SAM","SAM2",
+				"MISTN1","MISTN2",
+				"BORAL1","BORAL2","BORAL3","BORAL4",
+				"SPBAYESspat",
+				"BC1","BC2",
+				"ssHMSC","ssHMSC2","HMSC1", "HMSC2", "HMSC3","HMSC4")
 				
 nmodels<-length(mod_names)
 models <- 1:nmodels
@@ -88,62 +98,35 @@ models <- 1:nmodels
 # predictions
 ##########################################################################################
 
-preds_I <- c("gam_PAs_I.r",
-			"gam_PAs_I_spat1.r",
-			"gam_PAs_I_spat2.r",
-			"glm_PAs_I.r",
-			"glmmPQL_PAs_I.r",  
-			"glmmPQL_spat_PAs_I.r",  
-			"spaMM_PAs_I.r",  
-			"spaMMspat_PAs_I.r",  
-			"manyglm_PAs_I.r",
-			"mrt_PAs_I.r", 
-			"mrt_PAs_I_spat.r",
-			"gnn_PAs_I.r",
-			"rf_PAs_I.r",
-			"brt_PAs_I.r",
-			"svm_PAs_I.r",
-			"mars_PAs_I.r",
-			"mars_int_PAs_I.r",
-			"mvrf_PAs_I.r",
-			"gjam_PAs_I.r", 
-			"sam_PAs.r",
-			"mstnt_PAs_I.r",
-			"ss_hmsc_PAs_I_1.r",
-			"hmsc_PAs_I_1.r",
-			"hmsc_PAs_I_2.r",
-			"hmsc_PAs_I_3.r")
+pred_names	<-	list("gam_PAs_","gam2_PAs_","gam_spat1_PAs_","gam_spat2_PAs_",
+				"glm_PAs_","glm2_PAs_",
+				"glmmPQL_PAs_","glmmPQL2_PAs_","glmmPQLspat_PAs_",
+				"spaMM_PAs_","spaMM2_PAs_",
+				"spaMMspat_PAs_",
+				"traitglm1_PAs_","traitglm2_PAs_","traitglm3_PAs_",
+				"mrt_PAs_","mrt2_PAs_",
+				"gnn_PAs_","gnn2_PAs_",
+				"rf_PAs_","rf2_PAs_",
+				"brt_PAs_","brt2_PAs_",
+				"svm_PAs_","svm2_PAs_",
+				"mars_PAs_","mars2_PAs_","mars_int_PAs_","mars_int2_PAs_",
+				"mvrf_PAs_","mvrf2_PAs_",
+				"gjam_PAs_","gjam2_PAs_",
+				"sam_PAs_","sam2_PAs_",
+				"mstnt_PAs_","mstnt2_PAs_",
+				"boral1_PAs_","boral2_PAs_","boral3_PAs_","boral4_PAs_",
+				"spBspat_",
+				"bc1_PAs_","bc2_PAs_",
+				"ss_hmsc1_PAs_","ss_hmsc2_PAs_",
+				"hmsc1_PAs_","hmsc2_PAs_","hmsc3_PAs_","hmsc4_PAs_")
 
-preds_E <- c("gam_PAs_E.r",
-			"gam_PAs_E_spat1.r",
-			"gam_PAs_E_spat2.r",
-			"glm_PAs_E.r",
-			"glmmPQL_PAs_E.r",  
-			"glmmPQL_spat_PAs_E.r",  
-			"spaMM_PAs_E.r",  
-			"spaMMspat_PAs_E.r",  
-			"manyglm_PAs_E.r",
-			"mrt_PAs_E.r", 
-			"mrt_PAs_E_spat.r", 
-			"gnn_PAs_E.r", 
-			"rf_PAs_E.r", 
-			"brt_PAs_E.r", 
-			"svm_PAs_E.r", 
-			"mars_PAs_E.r", 
-			"mars_int_PAs_E.r",
-			"mvrf_PAs_E.r",
-			"gjam_PAs_E.r", 
-			"sam_PAs_e.r", 
-			"mstnt_PAs_E.r", 
-			"ss_hmsc_PAs_E_1.r",			
-			"hmsc_PAs_E_1.r", 
-			"hmsc_PAs_E_2.r", 
-			"hmsc_PAs_E_3.r")
+pred_comms <- list()
 
-nmodels <- length(preds_I)
-
-pred_comms_I <- list()
-pred_comms_E <- list()
 
 ##########################################################################################
 
+if (length(mod_names)!=length(pred_names)) {
+	stop("Prediction objects list and predictions names list are of different size")
+	}
+
+##########################################################################################
