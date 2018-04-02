@@ -108,42 +108,51 @@ end
 % mean(hmc_poisson.eta)
 %DIST=3
 sel=(dist(:,1)==3);%|(dist(:,1)==3)|(dist(:,1)==4);
-if any(sel)
-	dsigma2=diag(sigma);
-	dsi2=dsigma2(sel);
+if any(sel)	
+   dsigma2 = diag(sigma);
+	dsi2 = dsigma2(sel);
 	si2 = repmat(dsi2,1,ny)';
-	r = 1000;
-	logr = log(r);
+   si2(si2>1E2) = 1E2;
+	si2(si2<1E-3) = 1E-3;
 
 	Ez1 = Ez(:,sel);
-	Y1=Y(:,sel);
-
-	%posterior w
-	Psi = z(:,sel) - logr;
-
-	n1 = size(Y1,1);
-	n2 = size(Y1,2);
-
-	b =  r;
-	c =  abs(Psi);
-	m= b ./2 ./c .* tanh(c/2);
+	Y1 = Y(:,sel);
     
-    %when c is too big, this converges to 2;
-    v_part2 =   (sinh(c)-c) ./ cosh(c ./2).^2;
-    v_part2(isnan(v_part2))=2;
-        
+    r = 1000;
+%     r = exp(Ez1)*100;
+%     r(r>1) = 1;
+	logr = log(r);
+  	
+	missing=isnan(Y1);
+  	Y1(missing) = poissrnd(exp(Ez1(missing)));
+
+  %posterior w
+	Psi = Ez1 - logr;
+   [n1,n2] = size(Y1);
+	b = r;
+	c = abs(Psi);
+	m = b ./2 ./c .* tanh(c/2);
+	
+	%when c is too big, this converges to 2;
+	v_part2 = (sinh(c)-c) ./ cosh(c./2).^2;
+%    v_part2(isnan(v_part2)|isinf(v_part2))=2;
+   v_part2(c>700) = 2; % approximate for when the above expression starts fail numerically to NaN
 	v= b ./4 ./c.^3 .* v_part2;
-        
 	w = randn(n1,n2) .* sqrt(v) + m;
-% 	w(w<0) =0;
-
+   w = abs(w);
+	% 	w(w<0) =0;
+	
 	%posterior Psi
-	Psi_var = 1.0 ./ (w + 1./si2);
-
-
-	Psi_mean = Psi_var .* ( Y1 - r./2.0 + (Ez1 - logr) ./ si2);
+   Psi_var = 1.0 ./ (w + 1./si2); 
+   Psi_mean = Psi_var .* ( Y1 - r./2.0 + (Ez1 - logr) ./ si2);
+%     if(any(Psi_var(:)==0))
+%         fprintf('HMSC: Fail with Psi_var\n');
+%     end
 	Psi = normrnd( Psi_mean, sqrt(Psi_var));
-	z(:,sel)=Psi + logr;
+	z1 = Psi + logr;
+   z1(z1 > 30) = 30;
+   z(:,sel) =  z1;
+   
 end
 %DIST=2
 sel=(dist(:,1)==2);
@@ -167,7 +176,7 @@ end
 % z(:,sel)=Ez(:,sel)+max(min(eps,10),-10);
 
 sel=(dist(:,1)==1);
-	if any(sel)
+if any(sel)
 	dsigma=sqrt(diag(sigma));
 	Y1=Y(:,sel);
 	missing=isnan(Y1);
@@ -175,8 +184,8 @@ sel=(dist(:,1)==1);
 	dsi=dsigma(sel);
 	mu = zeros(ny,sum(sel));
 	si = repmat(dsi,1,ny)';
-	low = repmat(-Inf,ny,sum(sel));
-	high = repmat(Inf,ny,sum(sel));
+	low = -Inf(ny,sum(sel));
+	high = Inf(ny,sum(sel));
 	eps = Hmsc.tnormrnd(mu(missing),si(missing),low(missing),high(missing));
 	z1 = Y1;
 	z1(missing) = Ez1(missing)+eps;

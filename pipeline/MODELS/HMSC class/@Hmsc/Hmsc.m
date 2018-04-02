@@ -148,11 +148,14 @@ classdef Hmsc < handle
 		Y = predictConditional(m, n, Yc, nmcmc, X, pi, xy, expected) % X and pi must be specified, everything else - only if applicable.
 		
 		[correlations,support,index] = computeCorrelations(m,level,threshold)
+      R2 = computeR2Pred(m,pred)
 		R2 = computeR2(m,predN)
 		[fixed, fixedsplit, random, traitR2] = computeVariances(m,group);
 		plotR2(m,R2,showToScreen, saveToFile)
 		plotVariancePartitioning(m,fixed,fixedsplit,random,traitR2,groupnames,grouprandomnames,showToScreen, saveToFile)
 		plotCorrelations(m,correlations, index, plottitle, type, showToScreen, saveToFile)
+      new = copy(this)
+      Ypred = crossValidate(m,part,mcmcRepN,postRep,postThin,predN)
 	end
 	
 	methods (Access = private)

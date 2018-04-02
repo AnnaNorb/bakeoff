@@ -1,33 +1,86 @@
 ##########################################################################################
-# MEAN SQUARED ERROR
+# ROOT MEAN SQUARED ERROR
 ##########################################################################################
+ensmblModels <- opts$modelEnsemble
+prevThrs <- opts$prevaleceThreshold
 
-load(file=paste(RD2,Sets[d],"/sp_rich_site_",dataN[sz],".RData",sep=""))
-load(file=paste(RD2,Sets[d],"/sp_rich_area_",dataN[sz],".RData",sep=""))
-load(file=paste(RD2,Sets[d],"/sp_occ_area_valid_",dataN[sz],".RData",sep=""))
-load(file=paste(RD2,Sets[d],"/sp_rich_area_valid_",dataN[sz],".RData",sep=""))
-load(file=paste(RD2,Sets[d],"/beta_inds_site_",dataN[sz],".RData",sep=""))
-load(file=paste(RD2,Sets[d],"/beta_inds_site_valid_",dataN[sz],".RData",sep=""))
+filebody<-paste(RD2,Sets[d],"/beta_inds_site_valid_",sep="")
+if (is.numeric(prevThrs)) {
+	filebody<-paste(filebody,"spThr",prevThrs*100,"_",sep="")
+}
+load(file=paste(filebody,dataN[sz],".RData",sep=""))
 
+filesnames<-c("sp_rich_site_","beta_inds_site_")
 
-spRichSiteMSE <- matrix(NA, nrow=nmodels, ncol=3)
-spRichAreaMSE <- matrix(NA, nrow=nmodels, ncol=3)
-BetaMSE <- rep( list(matrix(NA, nrow=nmodels, ncol=3)), 3 ) 
+filebodies<-paste(RD2,Sets[d],"/",filesnames,sep="")
+if (is.numeric(prevThrs)) {
+	filebodies<-paste(filebodies,"spThr",prevThrs*100,"_",sep="")
+}
+if (is.null(ensmblModels)!=TRUE) {
+	if (length(ensmblModels)==nmodels) { ensmbl<-"all" }
+	if (length(ensmblModels)!=nmodels) { ensmbl<-paste(ensmblModels,collapse="_") }
+	filebodies<-paste(filebodies,"ensmbl_",ensmbl,"_",sep="")
+}
+for (f in 1:length(filebodies)) {
+	load(file=paste(filebodies[f],dataN[sz],".RData",sep=""))
+}
 
-for (j in 1:3) {		
-	
-	for (m in 1:nmodels) {
+if (is.null(ensmblModels)!=TRUE) {
+	spRichSiteRMSE <- matrix(NA, nrow=1, ncol=3)
+	BetaRMSE <- rep( list(matrix(NA, nrow=1, ncol=3)), 3 ) 
+} else {
+	spRichSiteRMSE <- matrix(NA, nrow=nmodels, ncol=3)
+	BetaRMSE <- rep( list(matrix(NA, nrow=nmodels, ncol=3)), 3 ) 
+}
 
-		spRichSiteMSE[m,j] <- mean((matrix(rep(rowSums(y_valid[[j]]),times=REPs),ncol=REPs)-sp_rich_site[[j]][,,m])^2)
-		spRichAreaMSE[m,j] <- mean((matrix(rep(sp_rich_area_valid[[j]],times=REPs),ncol=REPs)-sp_rich_area[[j]][,,m])^2)
+for (j in 1:3) {
+
+	if (is.numeric(prevThrs)) {
+		sps<-which((colSums(y_valid[[j]])/nrow(y_valid[[j]]))>=prevThrs)
+	} else {
+		sps<-1:ncol(y_valid[[j]])
+	}
+			
+	if (is.null(ensmblModels)!=TRUE) {
+		spRichSiteRMSE[,j] <- mean(sqrt((matrix(rep(rowSums(y_valid[[j]][,sps]),times=REPs),ncol=REPs)-sp_rich_site[[j]][,])^2))
 		for (b in 1:3) {
-			BetaMSE[[b]][m,j] <- mean((matrix(rep(beta_inds_site_valid[[j]][,b],times=REPs),ncol=REPs)-beta_inds_site[[j]][,b,,m])^2)
+			BetaRMSE[[b]][,j] <- mean(sqrt((matrix(rep(beta_inds_site_valid[[j]][,b],times=REPs),ncol=REPs)-beta_inds_site[[j]][,b,])^2),na.rm=T)
+		}
+	} else {
+		for (m in 1:nmodels) {
+			spRichSiteRMSE[m,j] <- mean(sqrt((matrix(rep(rowSums(y_valid[[j]][,sps]),times=REPs),ncol=REPs)-sp_rich_site[[j]][,,m])^2))
+			for (b in 1:3) {
+				BetaRMSE[[b]][m,j] <- mean(sqrt((matrix(rep(beta_inds_site_valid[[j]][,b],times=REPs),ncol=REPs)-beta_inds_site[[j]][,b,,m])^2),na.rm=T)
 			}
 		}
 	}
 
-save(spRichSiteMSE, file=paste(RDfinal,dataN[sz],"/spRichSiteMSE_",Sets[d],".RData",sep=""))
-save(spRichAreaMSE, file=paste(RDfinal,dataN[sz],"/spRichAreaMSE_",Sets[d],".RData",sep=""))
-save(BetaMSE, file=paste(RDfinal,dataN[sz],"/BetaMSE_",Sets[d],".RData",sep=""))
+}
+
+filebody1<-paste(RDfinal,dataN[sz],"/spRichSiteRMSE_",sep="")
+filebody2<-paste(RDfinal,dataN[sz],"/BetaRMSE_",sep="")
+if (is.numeric(prevThrs)) {
+	filebody1<-paste(filebody1,"spThr",prevThrs*100,"_",sep="")
+	filebody2<-paste(filebody2,"spThr",prevThrs*100,"_",sep="")
+}
+if (is.null(ensmblModels)!=TRUE) {
+	if (length(ensmblModels)==nmodels) { ensmbl<-"all" }
+	if (length(ensmblModels)!=nmodels) { ensmbl<-paste(ensmblModels,collapse="_") }
+	filebody1<-paste(filebody1,"ensmbl_",ensmbl,"_",sep="")
+	filebody2<-paste(filebody2,"ensmbl_",ensmbl,"_",sep="")
+}
+save(spRichSiteRMSE, file=paste(filebody1,Sets[d],".RData",sep=""))
+save(BetaRMSE, file=paste(filebody2,Sets[d],".RData",sep=""))
+
+
+##########################################################################################
+
+PMs[[5]]<-as.vector(spRichSiteRMSE)
+names(PMs)[5]<-"accuracy2site"
+
+for (b in 1:3) {
+	PMs[[(5+b)]]<-as.vector(BetaRMSE[[b]])
+	names(PMs)[(5+b)]<-paste("accuracy3beta",b,sep="")
+}
 
 ##########################################################################################

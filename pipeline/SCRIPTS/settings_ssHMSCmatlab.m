@@ -11,17 +11,17 @@ hmscPath=fullfile(wdpath,'MODELS','HMSC class');
 niters=100;
 thin1=10;
 nadaptrounds=3;
-nrounds=50;
-thin2=10;
-MCMCcut=41;
+nrounds=6;
+thin2=20;
+MCMCcut=3;
 
 if MCMC2
     niters=200;
     thin1=20;
     nadaptrounds=3;
-    nrounds=100;
-    thin2=20;
-    MCMCcut=81;
+    nrounds=12;
+    thin2=40;
+    MCMCcut=6;
 end
 
 MCMCsaveRam=true;
@@ -32,3 +32,5 @@ Sets = {'birds','butterfly','plant','trees','vegetation'};
 dSizes=[150 300 600];
 nsets=size(Sets,2);
 predN = 100;
+
+

@@ -69,7 +69,7 @@ if verb > 0
 end
 for run = startRunN+(1:nRuns)
 	if verb > 1
-		fprintf(strcat('SAVE REPLICATE:',int2str(run),'\n'));
+		fprintf('SAVE REPLICATE: %d (%d/%d) --- %d\n',run,run-startRunN,nRuns,round(toc));
 	end
 	parVec = cell(1, length(m.samVec) );
 	parK = 1;

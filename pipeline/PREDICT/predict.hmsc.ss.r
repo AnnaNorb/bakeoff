@@ -1,20 +1,20 @@
 ##########################################################################################
-# HIERSRCHICAL MODELLING OF SPECIES COMMUNITIES PREDICTIONS FORMARTTING
+# HMSC PREDICTIONS FORMARTTING
 ##########################################################################################
 
-for (m in 1:4) {
+for (m in 1:2) {
 	for (j in 1:3) {
 
-		preds<-read.csv(paste(WD2,set_no, "/ss/preds_ss_m", m,"_d",j,"_",dataN[sz],".csv", sep=""),header=FALSE)
+		preds<-read.csv(paste(PD2,set_no, "/ssHMSC/preds_ss_",set_no,"_hmsc", m,"_d",j,"_",dataN[sz],".csv", sep=""),header=FALSE)
 
 		nsp <- ncol(y_valid[[j]])
 		niter <- ncol(preds)/nsp
 
-		if (m==4) {
-			nsite <- dim(y_valid[[j]])[1]+dim(y_valid[[j]])[1]
+		if (m == 1) {
+			nsite<-nrow(y_valid[[j]])
 		} else {
-			nsite <- dim(y_valid[[j]])[1]
-			}
+			nsite<-nrow(y_valid[[j]])+nrow(y_train[[j]])
+		}
 
 		preds <- as.matrix(preds)
 		ss_hmsc_PAs <- array(NA,dim=list(nsite,nsp,niter))
@@ -24,7 +24,7 @@ for (m in 1:4) {
 			ss_hmsc_PAs[,sp,] <- preds[,c(((niter*(sp-1))+1):(niter*sp))]
 		}
 
-		if (m==4) {
+		if (m != 1) {
 			ss_hmsc_PAs<-ss_hmsc_PAs[((dim(y_train[[j]])[1])+1):nsite,,]
 		}
 

@@ -6,38 +6,70 @@ require(BayesComm)
 
 ##########################################################################################
 
-mcmcControl<-list(nburn=20000,niter=40000,nthin=400)
+if (MCMC2) {
+	mcmcControl<-list(nburn=40000,niter=100000,nthin=600)
+} else {
+	mcmcControl<-list(nburn=20000,niter=50000,nthin=300)
+}
+
+##########################################################################################
 
 for (j in 1:3) {
 
-	if (j==1) { sT<-Sys.time() }
+	no0sp<-(colSums(y_train[[j]])!=0 & colSums(y_train[[j]])!=dataN[sz])
+	y_train_no0sp<-y_train[[j]][,no0sp]
+	if ( sum(no0sp)>=dataN[sz] ) {
+		dif <- -(dataN[sz]-sum(no0sp)-1)
+		drp<-order(colSums(y_train_no0sp))[1:dif]
+		y_train_no0sp<-y_train_no0sp[,-drp]
+	}
+	no0spNames<-colnames(y_train_no0sp)
+	save(no0spNames, file=paste(FD,set_no,"/no0sp_BC_",j,"_",dataN[sz],".RData",sep=""))
 
-	bc1	<-	BC(Y=y_train[[j]], X=x_train[[j]][,-1], model="full",
-   					its=mcmcControl$niter, thin=mcmcControl$nthin, burn=mcmcControl$nburn)
+	if (j==1) { sT<-Sys.time() }
+		#bc1	<-	try(BC(Y=y_train[[j]], X=x_train[[j]][,-1], model="environment",
+	   	#				its=mcmcControl$niter, thin=mcmcControl$nthin, burn=mcmcControl$nburn))
+	  	#	if (is(bc1)!="bayescomm") {
+		bc1	<-	BC(Y=y_train_no0sp, X=x_train[[j]][,-1], model="environment",
+				its=mcmcControl$niter, thin=mcmcControl$nthin, burn=mcmcControl$nburn)
+   					
+	if (j==1) { 
+		eT<-Sys.time()
+		comTimes<-eT-sT
+	}	
+	if (MCMC2) {
+		save(bc1, file=paste(FD,set_no,"/bc1_",j,"_",dataN[sz],"_MCMC2.RData",sep=""))
+		if (j==1) {
+			save(comTimes, file=paste(FD,set_no,"/comTimes_BC1_",dataN[sz],"_MCMC2.RData",sep=""))
+		}
+	} else {
+		save(bc1, file=paste(FD,set_no,"/bc1_",j,"_",dataN[sz],".RData",sep=""))
+		if (j==1) {
+			save(comTimes, file=paste(FD,set_no,"/comTimes_BC1_",dataN[sz],".RData",sep=""))
+		}
+	}
+
+	if (j==1) { sT<-Sys.time() }
+		bc2	<-	BC(Y=y_train_no0sp, X=x_train[[j]][,-1], model="full",
+				its=mcmcControl$niter, thin=mcmcControl$nthin, burn=mcmcControl$nburn)
 
 	if (j==1) { 
 		eT<-Sys.time()
 		comTimes<-eT-sT
 	}	
-	
-	save(bc1, file=paste(FD,set_no,"/bc1_",j,"_",dataN[sz],".RData",sep=""))
-	if (j==1) {
-	save(comTimes, file=paste(FD,set_no,"/comTimes_BC1_",dataN[sz],".RData",sep=""))
+	if (MCMC2) {
+		save(bc2, file=paste(FD,set_no,"/bc2_",j,"_",dataN[sz],"_MCMC2.RData",sep=""))
+		if (j==1) {
+			save(comTimes, file=paste(FD,set_no,"/comTimes_BC2_",dataN[sz],"_MCMC2.RData",sep=""))
+		}
+	} else {
+		save(bc2, file=paste(FD,set_no,"/bc2_",j,"_",dataN[sz],".RData",sep=""))
+		if (j==1) {
+			save(comTimes, file=paste(FD,set_no,"/comTimes_BC2_",dataN[sz],".RData",sep=""))
+		}
 	}
 
-	if (j==1) { sT<-Sys.time() }
-
-	bc2	<-	BC(Y=y_train[[j]], X=cbind(x_train[[j]][,-1],s_train[[j]]), model="full",
-   					its=mcmcControl$niter, thin=mcmcControl$nthin, burn=mcmcControl$nburn)
-
-	if (j==1) { 
-		eT<-Sys.time()
-		comTimes<-eT-sT
-	}	
-	
-	save(bc2, file=paste(FD,set_no,"/bc2_",j,"_",dataN[sz],".RData",sep=""))
-	if (j==1) {
-	save(comTimes, file=paste(FD,set_no,"/comTimes_BC2_",dataN[sz],".RData",sep=""))
-	}
-
+rm(bc1)
+rm(bc2)
+gc()
 }

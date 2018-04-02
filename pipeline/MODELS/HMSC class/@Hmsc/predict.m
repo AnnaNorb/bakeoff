@@ -90,7 +90,7 @@ for rN = 1:n
 					iW11 = m.iWg{i}(:,:,alphaInd(j));
 					muN = W12' * iW11 * etaM(:,j);
 					WN = W22 - W12' * iW11 * W12;
-					WN = (WN+WN') / 2;
+					WN = (WN+WN')/2;
 					etaN(:, j) = mvnrnd(muN, WN);
 				else
 					etaN(:, j) = normrnd(0,1,[newPiN,1]);

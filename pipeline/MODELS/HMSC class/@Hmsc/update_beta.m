@@ -50,9 +50,10 @@ if ~phylogeny
 			X1 = X;
 		end
 		Ube = inv(ph(j)*iV + (1/sigma(j,j))*(X1'*X1));
+        Ube = (Ube+Ube')/2;         
 		mbe = Ube*(ph(j)*iV*gaT(:,j)+(1/sigma(j,j))*X1'*S(:,j));
 		beta(:,j) = mvnrnd (mbe,Ube)';
-	end
+    end
 else
 	if ~speciesX
 		if outlierspecies

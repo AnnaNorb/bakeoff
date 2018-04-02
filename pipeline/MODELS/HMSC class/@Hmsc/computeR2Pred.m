@@ -1,14 +1,4 @@
-function R2 = computeR2(m,predN)
-
-predList = m.predict(predN, m.X, m.piCell, m.xyCell, true);
-pred = mean(cat(3,predList{:}),3);
-R2 = m.computeR2Pred(pred);
-
-pred = predList{1};
-for i=2:predN
-	pred = pred+predList{i};
-end
-pred = pred / predN;
+function R2 = computeR2Pred(m,pred)
 
 z=max(m.nr,1);
 R2 = zeros(m.ns,z);
