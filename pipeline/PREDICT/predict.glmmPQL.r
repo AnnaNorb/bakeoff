@@ -7,7 +7,6 @@ require(nlme)
 require(MASS)
 
 ##########################################################################################
-
 for (j in 1:3) {
 
 	nsp <- length(DD_v[[j]])
@@ -44,8 +43,6 @@ for (j in 1:3) {
 		save(glmmPQL1_PAs, file=paste(PD2,set_no,"/glmmPQL1_PAs_",j,"_",dataN[sz],".RData",sep=""))
 		save(glmmPQLspat1_PAs, file=paste(PD2,set_no,"/glmmPQLspat1_PAs_",j,"_",dataN[sz],".RData",sep=""))
 
-		rm(glmmPQL1_preds)
-		rm(glmmPQL_spat1_preds)
 		rm(glmmPQL1_preds)
 		rm(glmmPQL_spat1_preds)
 		rm(glmmPQL1_PAs)

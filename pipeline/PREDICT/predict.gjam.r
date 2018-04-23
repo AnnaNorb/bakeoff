@@ -10,7 +10,7 @@ source(paste(PD,"/gjamPredictMod.r",sep=""))
 
 for (j in 1:3) {	
 	load(file=paste(FD,set_no,"/no0sp_GJAM_",j,"_",dataN[sz],".RData",sep=""))
-	load(file=paste(FD,set_no,"/gjam",m,"_",j,"_",dataN[sz],".RData",sep=""))
+	load(file=paste(FD,set_no,"/gjam1_",j,"_",dataN[sz],".RData",sep=""))
 
 	gjamMod<-gjam1
 
@@ -30,7 +30,7 @@ for (j in 1:3) {
 	}
 	gjam1_PAs<-gjam_pred_w0sp
 
-	save(gjam1_PAs, file=paste(PD2,set_no,"/gjam1,"_PAs_",j,"_",dataN[sz],".RData",sep=""))
+	save(gjam1_PAs, file=paste(PD2,set_no,"/gjam1_PAs_",j,"_",dataN[sz],".RData",sep=""))
 
 	rm(gjam_pred)
 	rm(gjam_pred_w0sp)

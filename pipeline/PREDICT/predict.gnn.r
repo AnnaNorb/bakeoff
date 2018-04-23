@@ -22,7 +22,7 @@ for (j in 1:3) {
 
 	load(file=paste(FD,set_no,"/gnn1_",j,"_",dataN[sz],".RData",sep=""))
 
-	gnn1_probs <- as.matrix(predict(gnn, newdata=Xv, k=10, method="dstWeighted"))
+	gnn1_probs <- as.matrix(predict(gnn1, newdata=Xv, k=10, method="dstWeighted"))
 
 	noPredSp<-setdiff(colnames(y_train[[j]]),colnames(gnn1_probs))
 	predSp<-intersect(colnames(y_train[[j]]),colnames(gnn1_probs))
@@ -40,8 +40,8 @@ for (j in 1:3) {
 		gnn1_allProbs<-(gnn1_allProbs*0.99)+0.005
 	}
 
-	tmp1 <- foreach (i=1:REPs) %dopar% { rbinom(gnn_allProbs,1,gnn_allProbs) }
-	gnn1_PAs <- simplify2array(lapply(tmp,matrix,nrow=nsites,ncol=nsp))
+	tmp1 <- foreach (i=1:REPs) %dopar% { rbinom(gnn1_allProbs,1,gnn1_allProbs) }
+	gnn1_PAs <- simplify2array(lapply(tmp1,matrix,nrow=nsites,ncol=nsp))
 	rm(tmp1)
 
 	save(gnn1_PAs, file=paste(PD2,set_no,"/gnn1_PAs_",j,"_",dataN[sz],".RData",sep=""))

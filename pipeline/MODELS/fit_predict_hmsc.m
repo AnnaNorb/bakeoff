@@ -133,7 +133,7 @@ for dTyp=1:3                % interpol, extrapol1, extrapol2
     end
     save(fullfile(folderPred,strcat(filebodyPred,'.mat')),'predList');
     predsM=cell2mat(predList);
-    csvwrite(fullfile(folderPred,strcat(filebodyPredCsv,'.cvs')),predsM);
+    csvwrite(fullfile(folderPred,strcat(filebodyPredCsv,'.csv')),predsM);
 
     end
 end

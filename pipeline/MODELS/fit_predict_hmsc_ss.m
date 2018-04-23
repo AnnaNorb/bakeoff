@@ -182,8 +182,18 @@ set_no=Sets{s}
                 nsp=size(Y_v,2);
 
                 predsM=[];
-    
+
+                filebodyPredCsv=strcat('preds_ss_',num2str(set_no),'_hmsc',num2str(typ),'_d',num2str(dTyp),'_',num2str(dSz));
+
+                if MCMC2
+                    filebodyPredCsv=strcat(filebodyPredCsv,'_MCMC2');
+                end
+
                 for sp=1:nsp
+                    filebodyPred=strcat('sp',num2str(sp),'_',num2str(set_no),'_pred_hmsc',num2str(typ),'_d',num2str(dTyp),'_',num2str(dSz));
+                    if MCMC2
+                        filebodyPred=strcat(filebodyPred,'_MCMC2');
+                    end
                     load(fullfile(folderPred,strcat(filebodyPred,'.mat')),'predList');
                     predsM=[predsM,cell2mat(predList)];
                 end

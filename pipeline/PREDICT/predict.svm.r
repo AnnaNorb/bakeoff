@@ -16,7 +16,7 @@ for (j in 1:3) {
 	Xv <- x_valid[[j]][,-1]
 	Xv <- Xv[,1:ncovar]
 
-	load(file=paste(FD,set_no,"/svm1_",j,"_",dataN[sz],".RData",sep=""))
+	load(file=paste(FD,set_no,"/svm_",j,"_",dataN[sz],".RData",sep=""))
 
 	svm_notnull<-svmf[which(svmf!="NULL")]
 	svm_PAs <- array(NA, dim=c(nsites,nsp,REPs))

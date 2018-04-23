@@ -47,11 +47,12 @@ for (j in 1:3) {
 		rm(gam_preds)
 
 		if (m==1) { 
-			save(gam1_PAs, file=paste(PD2,set_no,"/gam_PAs_",j,"_",dataN[sz],".RData",sep=""))
+			save(gam_PAs, file=paste(PD2,set_no,"/gam_PAs_",j,"_",dataN[sz],".RData",sep=""))
 		}
 		if (m==2) { 
-			gam_spat1_PAs<-gam_PAs
-			save(gam_spat1_PAs, file=paste(PD2,set_no,"/gam_spat1_PAs_",j,"_",dataN[sz],".RData",sep=""))
+			gam_spat_PAs<-gam_PAs
+			save(gam_spat_PAs, file=paste(PD2,set_no,"/gam_spat_PAs_",j,"_",dataN[sz],".RData",sep=""))
+			rm(gam_spat_PAs)
 		}
 
 		rm(gam_PAs)

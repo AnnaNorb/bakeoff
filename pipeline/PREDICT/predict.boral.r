@@ -22,7 +22,7 @@ for (j in 1:3) {
 
 		Xv <- x_valid[[j]][,-1] 
 
-		if (m==2 & dataN[sz]!=600) {
+		if (m!=2 & dataN[sz]!=600) {
 			brl_preds <- boralPredict(brl, newX=Xv[1:dataN[sz],], predict.type="marginal")$all.linpred
 			for (o in 2:(600/dataN[sz])) {
 				tmp <- boralPredict(brl, newX=Xv[(dataN[sz]*(o-1)+1):(dataN[sz]*o),], predict.type="marginal")$all.linpred

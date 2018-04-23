@@ -24,7 +24,7 @@ for (j in 1:3) {
 		eT<-Sys.time()
 		comTimes<-eT-sT
 	}
-	save(gnn1, file=paste(FD,set_no,"/gnn_",j,"_",dataN[sz],".RData",sep=""))
+	save(gnn1, file=paste(FD,set_no,"/gnn1_",j,"_",dataN[sz],".RData",sep=""))
 	if (j==1) {
 		save(comTimes, file=paste(FD,set_no,"/comTimes_GNN1_",dataN[sz],".RData",sep=""))
 		rm(comTimes)
