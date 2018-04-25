@@ -37,7 +37,7 @@ for (j in 1:3) {
 		comTimes<-eT-sT
 		}
 	
-	save(sams1, file=paste(FD,set_no,"/sams_",j,"_",dataN[sz],".RData",sep=""))
+	save(sams1, file=paste(FD,set_no,"/sams1_",j,"_",dataN[sz],".RData",sep=""))
 	noSAMs1 <- nrow(sams1$betas)
 	save(noSAMs1, file=paste(FD,set_no,"/noSAMs1_",j,"_",dataN[sz],".RData",sep=""))
 	if (j==1) {
