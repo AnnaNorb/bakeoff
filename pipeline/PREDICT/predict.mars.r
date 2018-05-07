@@ -16,29 +16,29 @@ for (j in 1:3) {
 	load(file=paste(FD,set_no,"/mars_",j,"_",dataN[sz],".RData",sep=""))
 	load(file=paste(FD,set_no,"/mars_int_",j,"_",dataN[sz],".RData",sep=""))
 
-	mars_preds <- predict(mars, newdata=Xv)
-	mars_int_preds <- predict(mars_int, newdata=Xv)
+	mars1_preds <- predict(mars, newdata=Xv)
+	mars2_preds <- predict(mars_int, newdata=Xv)
 
-	Z <- array(NA, dim=list(nsites,nsp,REPs), dimnames=list(1:nsites,dimnames(mars_preds)[[2]],1:REPs))
-	Z_int <- array(NA, dim=list(nsites,nsp,REPs), dimnames=list(1:nsites,dimnames(mars_int_preds)[[2]],1:REPs))
+	Z1 <- array(NA, dim=list(nsites,nsp,REPs), dimnames=list(1:nsites,dimnames(mars1_preds)[[2]],1:REPs))
+	Z2 <- array(NA, dim=list(nsites,nsp,REPs), dimnames=list(1:nsites,dimnames(mars2_preds)[[2]],1:REPs))
 
 	for (n in 1:REPs) {
-		Z[,,n] <- rnorm(mars_preds,mean=mars_preds,sd=1)
-		Z_int[,,n] <- rnorm(mars_int_preds,mean=mars_int_preds,sd=1)
-		}
-	mars_PAs <- (Z>0)*1
-	mars_int_PAs <- (Z_int>0)*1
+		Z1[,,n] <- rnorm(mars1_preds,mean=mars1_preds,sd=1)
+		Z2[,,n] <- rnorm(mars2_preds,mean=mars2_preds,sd=1)
+	}
+	mars1_PAs <- (Z1>0)*1
+	mars2_PAs <- (Z2>0)*1
 
-	rm(mars_preds)
-	rm(mars_int_preds)
-	rm(Z)
-	rm(Z_int)
+	rm(mars1_preds)
+	rm(mars2_preds)
+	rm(Z1)
+	rm(Z2)
 
-	save(mars_PAs, file=paste(PD2,set_no,"/mars_PAs_",j,"_",dataN[sz],".RData",sep=""))
-	save(mars_int_PAs, file=paste(PD2,set_no,"/mars_int_PAs_",j,"_",dataN[sz],".RData",sep=""))
+	save(mars1_PAs, file=paste(PD2,set_no,"/mars1_PAs_",j,"_",dataN[sz],".RData",sep=""))
+	save(mars2_PAs, file=paste(PD2,set_no,"/mars2_PAs_",j,"_",dataN[sz],".RData",sep=""))
 
-	rm(mars_PAs)
-	rm(mars_int_PAs)
+	rm(mars1_PAs)
+	rm(mars2_PAs)
 	gc()
 	
 	}

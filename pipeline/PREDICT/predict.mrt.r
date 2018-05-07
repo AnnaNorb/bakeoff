@@ -26,16 +26,16 @@ for (j in 1:3) {
 	nsp <- ncol(y_valid[[j]])
 	nsites <- nrow(y_valid[[j]])
 
-	mrt_PAs <- array(dim=c(nsites,nsp,REPs))
+	mrt1_PAs <- array(dim=c(nsites,nsp,REPs))
 
 	for (n in 1:REPs){
-  		mrt_PAs[,,n] <- rbinom(mrt_probs,1,mrt_probs)
+  		mrt1_PAs[,,n] <- rbinom(mrt_probs,1,mrt_probs)
 		}
 	rm(mrt_probs)
 
-	save(mrt_PAs, file=paste(PD2,set_no,"/mrt_PAs_",j,"_",dataN[sz],".RData",sep=""))
+	save(mrt1_PAs, file=paste(PD2,set_no,"/mrt1_PAs_",j,"_",dataN[sz],".RData",sep=""))
 
-	rm(mrt_PAs)	
+	rm(mrt1_PAs)	
 	gc()
 
 	}

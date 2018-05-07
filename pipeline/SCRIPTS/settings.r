@@ -55,7 +55,7 @@ modpredsFolder<-paste(WD,"SCRIPTS/modify_preds",sep="")
 ##########################################################################################
 saveobjs<-c("sz","d","set_no","REPs","SETT","readdata","modpredsFolder","modpreds","dataN",
 			"saveobjs","crs","Sets","betaInds",
-			"pth","WD","DD","MD","FD","PD","PD2","RD","RD2","RDfinal")
+			"pth","WD","DD","MD","FD","PD","PD2","RD","RD2","RDfinal","MCMC2")
 saveobjs2<-c(saveobjs,"PMs","PMS","opts","ENS","PRV")
 
 # models
@@ -90,19 +90,19 @@ models <- 1:nmodels
 
 # predictions
 ##########################################################################################
-pred_names	<-	c("gam_PAs_","gam_spat1_PAs_",
-				"glm_PAs_",
-				"glmmPQL_PAs_","glmmPQLspat_PAs_",
+pred_names	<-	c("gam1_PAs_","gam_spat1_PAs_",
+				"glm1_PAs_",
+				"glmmPQL1_PAs_","glmmPQLspat1_PAs_",
 				"manyglm1_PAs_",
-				"mrt_PAs_",
-				"gnn_PAs_",
-				"rf_PAs_",
-				"brt_PAs_",
-				"svm_PAs_",
-				"mars_PAs_","mars_int_PAs_",
-				"gjam_PAs_",
-				"sam_PAs_",
-				"mstnt_PAs_",
+				"mrt1_PAs_",
+				"gnn1_PAs_",
+				"rf1_PAs_",
+				"brt1_PAs_",
+				"svm1_PAs_",
+				"mars1_PAs_","mars2_PAs_",
+				"gjam1_PAs_",
+				"sam1_PAs_",
+				"mstnt1_PAs_",
 				"boral1_PAs_","boral2_PAs_",
 				"bc1_PAs_","bc2_PAs_",
 				"ss_hmsc1_PAs_","ss_hmsc2_PAs_",

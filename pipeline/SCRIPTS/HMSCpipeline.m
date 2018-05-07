@@ -3,8 +3,6 @@ clearvars;
 
 % pipeine directory
 wdpath=fullfile('...','bakeoff','pipeline');
-%wdpath=fullfile('D:\HY-data\NORBERG\OneDrive - University of Helsinki\bakeoff','pipeline');
-%wdpath=fullfile('/Users/anorberg/OneDrive - University of Helsinki/bakeoff/pipeline')
 
 % run twice longer MCMC chains?
 MCMC2=false;

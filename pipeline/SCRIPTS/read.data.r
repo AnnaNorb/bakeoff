@@ -5,7 +5,7 @@ setwd(DD)
 
 # select random samples from the whole training set
 ##########################################################################################
-if ( !file.exists(paste("siteSamps_",Sets[d],".mat",sep="")) ) { 
+if ( !file.exists(paste("siteSamps_",Sets[d],".mat",sep="")) | !file.exists(paste("spSel_",Sets[d],".csv",sep="")) ) { 
 	set.seed(7); randSamp300<-sample(1:600,300,replace=F)
 	set.seed(7); randSamp150<-sample(randSamp300,150,replace=F)
 	siteSamps<-list(randSamp150,randSamp300,1:600)
@@ -137,7 +137,9 @@ for (i in 1:3) {
 	DD_v[[i]]<-dd_v
 
 }
+##########################################################################################
 
+setwd(WD)
 
 ##########################################################################################
 

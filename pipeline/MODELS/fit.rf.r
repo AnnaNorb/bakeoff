@@ -18,8 +18,17 @@ for (j in 1:3) {
 	DD_t_rf <- DD_t[[j]]
 	for (k in 1:nsp) {
 		DD_t_rf[[k]]<-DD_t_rf[[k]][,c(1,3:(ncovar+2))]
-		DD_t_rf[[k]][,1]<-as.factor(DD_t[[j]][[k]][,1])
+		#DD_t_rf[[k]][,1]<-as.factor(DD_t[[j]][[k]][,1])
 	}
+
+# 	if (j==1) { sT<-Sys.time() }
+# 	for (k in 1:nsp) {
+# 		tuneResult <- NULL
+# 		tuneResult <- try(tune(randomForest, sp ~ ., data=DD_t_rf[[k]],
+# 										importance=TRUE,
+# 										keep.forest=TRUE,
+# 										proximity=TRUE,
+# 										ranges=list(ntree=ntrees,mtry=mtrys)))
 
 	if (j==1) { sT<-Sys.time() }
 	for (k in 1:nsp) {
@@ -28,7 +37,7 @@ for (j in 1:3) {
 										importance=TRUE,
 										keep.forest=TRUE,
 										proximity=TRUE,
-										ranges=list(ntree=ntrees,mtry=mtrys)))
+										ranges=list(ntree=ntrees,mtry=mtrys, nodesize=c(1,2,5,10))))
 
 # 		tuneResult <- try(best.randomForest(sp ~ ., data=DD_t_rf[[k]],
 # 										importance=TRUE,
@@ -39,12 +48,12 @@ for (j in 1:3) {
 
 # 		if (is(tuneResult)=="randomForest.formula") {	
 		if (inherits(tuneResult,"tune")) {	
-			rff<-tuneResult$best.model
+			rff1<-tuneResult$best.model
 		} else {
-			rff<-NULL	
+			rff1<-NULL	
 		}
-		save(rff, file=paste(FD,set_no,"/rfs/rf_",j,"_sp",k,"_",dataN[sz],".RData",sep=""))
-		rm(rff)
+		save(rff1, file=paste(FD,set_no,"/rfs/rf1_",j,"_sp",k,"_",dataN[sz],".RData",sep=""))
+		rm(rff1)
 		gc()
 	}
 	if (j==1) {
