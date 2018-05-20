@@ -20,8 +20,7 @@ get_os <- function() {
 OS<-get_os()
 
 ##########################################################################################
-#pth<-"..." 	# write here the path to the location of the 'bakeoff' folder
-pth<-"~/OneDrive - University of Helsinki/" 
+pth<-"..." 	# write here the path to the location of the 'bakeoff' folder
 
 SETT<-paste(pth,"bakeoff/pipeline/SCRIPTS/settings.r",sep="")
 source(SETT)
@@ -37,6 +36,8 @@ setwd(WD)
 # dir.create(RDfinal)
 # dir.create(paste(RDfinal,"150/",sep=""))
 # dir.create(paste(RDfinal,"300/",sep=""))
+# dir.create(paste(RDfinal,"150/meta_analysis",sep=""))
+# dir.create(paste(RDfinal,"300/meta_analysis",sep=""))
 
 ##########################################################################################
 
@@ -47,7 +48,7 @@ require(devtools)
 install_github("davharris/mistnet2")
 install_github('BayesComm', 'goldingn')
 
-if (OS=="osx") { 
+if (OS=="osx"|OS=="unix") { 
 	install.packages("doMC")
 	install.packages(paste(WD,"MODELS/mvpart_pkg/mvpart_1.6-2.tar",sep=''), repos = NULL, type="source") 
 	}
@@ -59,7 +60,7 @@ if (OS=="win") {
 ##########################################################################################
 
 crs<-2
-if (OS=="osx") {
+if (OS=="osx"|OS=="unix") { 
 	require(doMC)
 	registerDoMC(cores=crs)
 }
@@ -158,9 +159,9 @@ for (d in 1:length(Sets)) {
 ##########################################################################################
 # PERFORMANCE MEASURES
 ##########################################################################################
-rm(list=ls()[!(ls() %in% SETT)]); gc(); source(SETT); setwd(WD)
+rm(list=ls()[!(ls() %in% c("OS","pth","SETT"))]); gc(); source(SETT); setwd(WD)
 		
-ENS<-list(NULL,unlist(mod_names),c("HMSC3", "MARS1", "BRT1", "MISTN1", "GNN1"))
+ENS<-list(NULL,unlist(mod_names),c("HMSC3", "GLM5", "MISTN1", "GNN1", "MARS1"))
 PRV<-list(NA, 0.1)
 
 for (e in 1:length(ENS)) {
@@ -185,10 +186,7 @@ for (e in 1:length(ENS)) {
 
 # calculate measures	
 ##########################################################################################
-rm(list=ls()[!(ls() %in% saveobjs2)]); gc(); source(SETT); setwd(WD)
-
-ENS<-list(NULL,unlist(mod_names),c("HMSC3", "MARS1", "BRT1", "MISTN1", "GNN1"))
-PRV<-list(NA, 0.1)
+rm(list=ls()[!(ls() %in% c("OS","pth","SETT","ENS","PRV"))]); gc(); source(SETT); setwd(WD)
 
 for (e in 1:length(ENS)) {
 	for (p in 1:length(PRV)) {
@@ -227,9 +225,10 @@ for (e in 1:length(ENS)) {
 
 # full PM results table with features without any tranformations
 ##########################################################################################
-rm(list=ls()[!(ls() %in% saveobjs2)]); gc(); source(SETT); setwd(WD)
+rm(list=ls()[!(ls() %in% c("OS","pth","SETT","ENS","PRV"))]); gc(); source(SETT); setwd(WD)
 
 TBL_PMS_ALL<-NA
+
 for (e in 1:length(ENS)) {
 	for (p in 1:length(PRV)) {
 		opts<-list(modelEnsemble=ENS[[e]],prevaleceThreshold=PRV[[p]])		
@@ -259,22 +258,21 @@ for (e in 1:length(ENS)) {
 			colnames(TBL)[(ncol(TBL)-2):ncol(TBL)]<-c("dataSize","predType","dataSet")
 			TBL_PMS<-cbind(TBL,PMS,PRV[[p]])
 			colnames(TBL_PMS)[ncol(TBL_PMS)]<-"prevThr"
-			#print(paste("Number of NAs",sum(is.na(TBL_PMS)),"for data size",dataN[sz]))
 			TBL_PMS_all<-rbind(TBL_PMS_all,TBL_PMS)	
-		}
-		TBL_PMS_all<-TBL_PMS_all[-1,]
+			TBL_PMS_all<-TBL_PMS_all[-1,]
 
-		filebody<-paste(RDfinal,dataN[sz],"/meta_analysis/finalTBLall",sep="")
-		if (is.numeric(opts$prevaleceThreshold)) {
-			filebody<-paste(filebody,"_spThr",opts$prevaleceThreshold*100,sep="")
+			filebody<-paste(RDfinal,dataN[sz],"/meta_analysis/finalTBLall",sep="")
+			if (is.numeric(opts$prevaleceThreshold)) {
+				filebody<-paste(filebody,"_spThr",opts$prevaleceThreshold*100,sep="")
+			}
+			if (is.null(opts$modelEnsemble)!=TRUE) {
+				if (length(opts$modelEnsemble)==nmodels) { ensmbl<-"all" }
+				if (length(opts$modelEnsemble)!=nmodels) { ensmbl<-paste(opts$modelEnsemble,collapse="_") }
+				filebody<-paste(filebody,"_ensmbl_",ensmbl,sep="")
+			}
+			save(TBL_PMS_all, file=paste(filebody,".RData",sep=""))
+			TBL_PMS_ALL<-rbind(TBL_PMS_ALL,TBL_PMS_all)
 		}
-		if (is.null(opts$modelEnsemble)!=TRUE) {
-			if (length(opts$modelEnsemble)==nmodels) { ensmbl<-"all" }
-			if (length(opts$modelEnsemble)!=nmodels) { ensmbl<-paste(opts$modelEnsemble,collapse="_") }
-			filebody<-paste(filebody,"_ensmbl_",ensmbl,sep="")
-		}
-		save(TBL_PMS_all, file=paste(filebody,".RData",sep=""))
-		TBL_PMS_ALL<-rbind(TBL_PMS_ALL,TBL_PMS_all)
 	}
 }
 TBL_PMS_ALL<-TBL_PMS_ALL[-1,]
@@ -295,12 +293,11 @@ pms<-pms[c(1,2,4,3,
 		6,10,18,14,
 		7,11,19,15,
 		8,12,20,16)]
-resTBL[,minTomaxBest] <- -resTBL[,minTomaxBest]
 
 pdf(file=paste(RDfinal,"raw_res_fig.pdf",sep=""),bg="transparent",width=15,height=15)
 	par(family="serif",mfrow=c(5,4),mar=c(7,3,2,1))
 	for (p in 1:length(pms)) {
-		plot(0,0,xlim=c(0,length(mod_names2)),ylim=c(min(resTBL[,pms[p]]),max(resTBL[,pms[p]])),type='n',xaxt='n',xlab="",ylab="",main=pms[p])
+		plot(0,0,xlim=c(0,length(mod_names)),ylim=c(min(resTBL[,pms[p]]),max(resTBL[,pms[p]])),type='n',xaxt='n',xlab="",ylab="",main=pms[p])
 		for (m in 1:length(mod_names)) {
 			lines(resTBL[which(resTBL$Abbreviation==mod_names[[m]]),pms[p]],
 				x=rep(m,times=length(resTBL[which(resTBL$Abbreviation==mod_names[[m]]),pms[p]])),lwd=2)
@@ -310,7 +307,6 @@ pdf(file=paste(RDfinal,"raw_res_fig.pdf",sep=""),bg="transparent",width=15,heigh
 		axis(1,1:length(mod_names),unlist(mod_names),las=2)
 	}
 dev.off()
-
 
 # compile computation times
 ##########################################################################################
@@ -322,13 +318,13 @@ for (sz in 1:2) {
 	for (d in 1:length(Sets)) {
 		set_no <- Sets[d]
 		comtimes<-list()
-		for (m in 1:length(mod_names)) {
+		for (m in 1:length(mod_names3)) {
 			if (m <= 20) {
-				load(file=paste(FD,set_no,"/comTimes_",mod_names[m],"_",dataN[sz],".RData",sep=""))
-				comtimes[[m]]<-as.numeric(comTimes, units = "mins")
+				load(file=paste(FD,set_no,"/comTimes_",mod_names3[m],"_",dataN[sz],".RData",sep=""))
+				comtimes[[m]]<-as.numeric(comTimes, units = "mins")	
 			} 
 			if (m > 20 & m <= 22) {
-				tmp<-read.mat(filename=paste(FD,set_no,"/ssHMSC/compTime_",Sets[d],"_",mod_names[m],"_",dataN[sz],".mat",sep=""))
+				tmp<-read.mat(filename=paste(FD,set_no,"/ssHMSC/compTime_",Sets[d],"_",mod_names3[m],"_",dataN[sz],".mat",sep=""))
 				comtimes[[m]]<-as.numeric(tmp)/60
 			}	
 			if (m > 22) {

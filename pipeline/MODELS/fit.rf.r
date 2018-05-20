@@ -10,6 +10,7 @@ require(e1071)
 ntrees<-c(500,1000,1500,2000)
 ncovar<-(ncol(x_train[[1]])-1)/2
 mtrys=2:ceiling(ncovar/2)
+nodszs<-c(1,2,5,10)
 
 for (j in 1:3) {
 
@@ -37,7 +38,7 @@ for (j in 1:3) {
 										importance=TRUE,
 										keep.forest=TRUE,
 										proximity=TRUE,
-										ranges=list(ntree=ntrees,mtry=mtrys, nodesize=c(1,2,5,10))))
+										ranges=list(ntree=ntrees,mtry=mtrys, nodesize=nodszs)))
 
 # 		tuneResult <- try(best.randomForest(sp ~ ., data=DD_t_rf[[k]],
 # 										importance=TRUE,

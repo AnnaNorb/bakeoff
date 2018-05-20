@@ -11,17 +11,17 @@ hmscPath=fullfile(wdpath,'MODELS','HMSC class');
 niters=100;
 thin1=10;
 nadaptrounds=3;
-nrounds=6;
-thin2=20;
-MCMCcut=3;
+nrounds=9;
+thin2=30;
+MCMCcut=6;
 
 if MCMC2
-    niters=200;
-    thin1=20;
+    niters=niters*2;
+    thin1=thin1*2;
     nadaptrounds=3;
-    nrounds=12;
-    thin2=40;
-    MCMCcut=6;
+    nrounds=nrounds*2;
+    thin2=thin2*2;
+    MCMCcut=MCMCcut*2;
 end
 
 MCMCsaveRam=true;

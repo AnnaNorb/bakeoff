@@ -15,10 +15,10 @@ for (j in 1:3) {
 
 	Yv <- y_valid[[j]]
 	
-	Xv <- x_valid[[j]]
+	Xv <- x_valid[[j]][,c(2:(ncovar+1))]
 	colnames(Xv)<-paste("V",(ncol(Yv)+1):(ncol(Yv)+ncol(Xv)),sep="")
 	rownames(Xv)<-paste("e",1:nrow(Xv),sep="")
-	Xv <- as.data.frame(Xv[,-1])
+	Xv <- as.data.frame(Xv)
 
 	mrt_probs <- predict(mrts,type="matrix", newdata=Xv)
 	rm(mrts)

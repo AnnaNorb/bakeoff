@@ -18,7 +18,7 @@ for (j in 1:3) {
 
 	if (j==1) { sT<-Sys.time() }
 	mrts <- mvpart(data.matrix(dataAll[,1:ncol(y_train[[j]])])~.,
-					data=as.data.frame(dataAll[,(ncol(y_train[[j]])+2):(ncol(dataAll))]),
+					data=as.data.frame(dataAll[,(ncol(y_train[[j]])+1):(ncol(dataAll))]),
               			xv="min",plot.add=FALSE)
 	if (j==1) {
 		eT<-Sys.time()

@@ -8,26 +8,32 @@ require(mistnet2)
 
 for (j in 1:3) {
 
-	load(file=paste(FD,set_no,"/mstnt_",j,"_",dataN[sz],".RData",sep=""))
+	for (m in 1:2) {
 
-	Xv <- x_valid[[j]][,-1]
+		load(file=paste(FD,set_no,"/mstnt",m,"_",j,"_",dataN[sz],".RData",sep=""))
 
-	newnet<-mstnt
-	newnet$x<-Xv
+		Xv <- x_valid[[j]][,-1]
+	
+		if (m==1) { newnet<-mstnt1 }
+		if (m==2) { newnet<-mstnt2 }
 
-	mstnt1_probs <- predict(newnet,newdata=newnet$x,n_samples=REPs)
+		newnet$x<-Xv
 
-	mstnt1_PA <- rbinom(mstnt1_probs,1,mstnt1_probs)
-	mstnt1_PAs <- array(mstnt1_PA, dim=list(dim(mstnt1_probs)[1],dim(mstnt1_probs)[2],dim(mstnt1_probs)[3]))
+		mstnt_probs <- predict(newnet,newdata=newnet$x,n_samples=REPs)
 
-	save(mstnt1_PAs, file=paste(PD2,set_no,"/mstnt1_PAs_",j,"_",dataN[sz],".RData",sep=""))
+		mstnt_PA <- rbinom(mstnt_probs,1,mstnt_probs)
+		mstnt_PAs <- array(mstnt_PA, dim=list(dim(mstnt_probs)[1],dim(mstnt_probs)[2],dim(mstnt_probs)[3]))
 
-	rm(mstnt)
-	rm(newnet)
-	rm(mstnt1_probs)
-	rm(mstnt1_PA)
-	rm(mstnt1_PAs)
-	gc()
+		save(mstnt_PAs, file=paste(PD2,set_no,"/mstnt",m,"_PAs_",j,"_",dataN[sz],".RData",sep=""))
+
+		if (m==1) { rm(mstnt1) }
+		if (m==2) { rm(mstnt2) }
+		rm(newnet)
+		rm(mstnt_probs)
+		rm(mstnt_PA)
+		rm(mstnt_PAs)
+		gc()
 	
 	}
+}	
 ##########################################################################################

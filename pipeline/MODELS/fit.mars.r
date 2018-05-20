@@ -12,33 +12,33 @@ for (j in 1:3) {
 	Xt<-x_train[[j]][,c(2:(ncovar+1))]
 	
 	if (j==1) { sT<-Sys.time() }
-		mars	<-	earth(x=Xt, y=y_train[[j]],
+		mars1	<-	earth(x=Xt, y=y_train[[j]],
 			        degree=1, glm=list(family=binomial(link="probit")))
 	if (j==1) {
 		eT<-Sys.time()
 		comTimes<-eT-sT
 		}
-	save(mars, file=paste(FD,set_no,"/mars_",j,"_",dataN[sz],".RData",sep=""))
+	save(mars1, file=paste(FD,set_no,"/mars1_",j,"_",dataN[sz],".RData",sep=""))
 	if (j==1) {
-		save(comTimes, file=paste(FD,set_no,"/comTimes_MARS_COMM1_",dataN[sz],".RData",sep=""))
+		save(comTimes, file=paste(FD,set_no,"/comTimes_MARS1_",dataN[sz],".RData",sep=""))
 		rm(comTimes)
 	}
 
 	if (j==1) { sT<-Sys.time() }
-		mars_int	<-	earth(x=Xt, y=y_train[[j]],
+		mars2	<-	earth(x=Xt, y=y_train[[j]],
                     	degree=2, glm=list(family=binomial(link="probit")))
 	if (j==1) {
 		eT<-Sys.time()
 		comTimes<-eT-sT
 		}
-	save(mars_int, file=paste(FD,set_no,"/mars_int_",j,"_",dataN[sz],".RData",sep=""))
+	save(mars2, file=paste(FD,set_no,"/mars2_",j,"_",dataN[sz],".RData",sep=""))
 	if (j==1) {
-		save(comTimes, file=paste(FD,set_no,"/comTimes_MARS_INT1_",dataN[sz],".RData",sep=""))
+		save(comTimes, file=paste(FD,set_no,"/comTimes_MARS2_",dataN[sz],".RData",sep=""))
 		rm(comTimes)
 	}
 	
-	rm(mars)
-	rm(mars_int)
+	rm(mars1)
+	rm(mars2)
 	gc()
 }
 

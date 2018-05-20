@@ -60,37 +60,64 @@ saveobjs2<-c(saveobjs,"PMs","PMS","opts","ENS","PRV")
 
 # models
 ##########################################################################################
-mod_names <- c("GAM1","GAMspat1",
+mod_names <- list("GAM1","GAM2",
 				"GLM1",
-				"GLMPQL1","GLMPQLspat",
+				"GLM2","GLM3",
+				"GLM6",
+				"MRTS1",
+				"GNN1",
+				"RF1",
+				"BRT1",
+				"SVM1",
+				"MARS1","MARS2",
+				"GJAM1",
+				"SAM1",
+				"MISTN1",
+				"GLM7","BORAL1",
+				"BC1","BC2",
+				"GLM4","GLM5",
+				"HMSC1","HMSC2","HMSC3")
+mod_names2 <- c(rep("GAM",2),
+				rep("GLM",4),
+				"MRTS",
+				"GNN",
+				"RF",
+				"BRT",
+				"SVM",
+				rep("MARS",2),
+				"GJAM",
+				"SAM",
+				"MISTN",
+				"GLM",
+				"BORAL",
+				rep("BC",2),
+				rep("GLM",2),
+				rep("HMSC",3))
+mod_names3 <- c("GAM","GAMspat1",
+				"GLM1",
+				"GLMPQL1","GLMPQLspat1",
 				"MVABUND1",
 				"MRTS1",
 				"GNN1",
 				"RF1",
 				"BRT1",
 				"SVM1",
-				"MARS_COMM1","MARS_INT1",
+				"MARS1","MARS2",
 				"GJAM1",
 				"SAM1",
 				"MISTN1",
 				"BORAL1","BORAL2",
 				"BC1","BC2",
-				"ssHMSC1","ssHMSC2",
-				"HMSC1", "HMSC2", "HMSC3")
-mod_names2 <- c( rep("GAM",2),rep("GLM",3),
-				"MVABUND","MRTS","GNN","RF","BRT","SVM",
-				"MARS_COMM","MARS_INT","GJAM","SAM","MISTN",
-				rep("BORAL",2),
-				rep("BC",2),
-				rep("ssHMSC",2),
-				rep("HMSC",3))
-			
+				"hmsc1","hmsc2",
+				"hmsc1","hmsc2","hmsc3")
+cbind(mod_names,mod_names2,mod_names3)
 nmodels<-length(mod_names)
 models <- 1:nmodels
+nfrmwrks<-length(unique(mod_names2))
 
 # predictions
 ##########################################################################################
-pred_names	<-	c("gam1_PAs_","gam_spat1_PAs_",
+pred_names	<-	list("gam1_PAs_","gam_spat1_PAs_",
 				"glm1_PAs_",
 				"glmmPQL1_PAs_","glmmPQLspat1_PAs_",
 				"manyglm1_PAs_",
@@ -107,8 +134,9 @@ pred_names	<-	c("gam1_PAs_","gam_spat1_PAs_",
 				"bc1_PAs_","bc2_PAs_",
 				"ss_hmsc1_PAs_","ss_hmsc2_PAs_",
 				"hmsc1_PAs_","hmsc2_PAs_","hmsc3_PAs_")
+names(pred_names)<-mod_names
 
-cbind(mod_names,mod_names2,pred_names)	
+print(cbind(mod_names,mod_names2,mod_names3,pred_names))
 
 ##########################################################################################
 

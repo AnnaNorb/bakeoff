@@ -11,7 +11,7 @@ for (j in 1:3) {
 
 	glm1_PAs <- array(NA,dim=list(nsites,nsp,REPs))
 
-	glm1_preds<-foreach(i=1:nsp) %dopar% { tryCatch({ predict(glms[[i]], newdata=DD_v[[j]][[i]], type='response')}, 
+	glm1_preds<-foreach(i=1:nsp) %dopar% { tryCatch({ predict(glms1[[i]], newdata=DD_v[[j]][[i]], type='response')}, 
 											error=function(e){cat("ERROR :",conditionMessage(e), "\n")}) }
 
 	for (i in 1:nsp) {
