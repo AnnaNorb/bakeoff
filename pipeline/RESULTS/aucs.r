@@ -6,7 +6,7 @@ prevThrs <- opts$prevaleceThreshold
 
 require(pROC)
 
-filebody<-paste(RD2,Sets[d],"/sp_occ_probs_",sep="")
+filebody<-file.path(RD2,Sets[d],"sp_occ_probs_")
 if (is.numeric(prevThrs)) {
 	filebody<-paste(filebody,"spThr",prevThrs*100,"_",sep="")
 }
@@ -32,14 +32,14 @@ for (j in 1:3) {
 	if (is.null(ensmblModels)!=TRUE) {
 		tmp<-matrix(NA,ncol=ncol(y_valid[[j]][,sps]))
 			for (i in 1:length(sps)) {
-				try(tmp[i]<-auc(predictor=sp_occ_probs[[j]][,i],response=y_valid[[j]][,sps[i]]))
+				try(tmp[i]<-roc(predictor=sp_occ_probs[[j]][,i],response=y_valid[[j]][,sps[i]])$auc)
 			}
 		AUCs[,j] <- mean(tmp,na.rm=T)
 	} else {
 		for (m in 1:nmodels) {
 			tmp<-matrix(NA,ncol=ncol(y_valid[[j]][,sps]))
 			for (i in 1:length(sps)) {
-				try(tmp[i]<-auc(predictor=sp_occ_probs[[j]][,i,m],response=y_valid[[j]][,sps[i]]))
+				try(tmp[i]<-roc(predictor=sp_occ_probs[[j]][,i,m],response=y_valid[[j]][,sps[i]])$auc)
 			}
 			length(sp_occ_probs[[j]][,i,m])
 			AUCs[m,j] <- mean(tmp,na.rm=T)
@@ -47,7 +47,7 @@ for (j in 1:3) {
 	}	
 }
 
-filebody<-paste(RDfinal,dataN[sz],"/AUCs_",sep="")
+filebody<-file.path(RDfinal,dataN[sz],"AUCs_")
 if (is.numeric(prevThrs)) {
 	filebody<-paste(filebody,"spThr",prevThrs*100,"_",sep="")
 }
@@ -58,8 +58,8 @@ if (is.null(ensmblModels)!=TRUE) {
 }
 save(AUCs, file=paste(filebody,Sets[d],".RData",sep=""))
 
-PMs[[2]]<-as.vector(AUCs)
-names(PMs)[2]<-"discrimination1"
+# PMs[[2]]<-as.vector(AUCs)
+# names(PMs)[2]<-"discrimination1"
 
 ##########################################################################################
 # j<-1

@@ -20,7 +20,7 @@ for (j in 1:3) {
 	colnames(Xv)<-paste("V",1:ncol(Xv),sep="")
 	rownames(Xv)<-paste("i",1:nrow(Xv),sep="")
 
-	load(file=paste(FD,set_no,"/gnn1_",j,"_",dataN[sz],".RData",sep=""))
+	load(file=file.path(FD,set_no,paste("gnn1_",j,"_",dataN[sz],".RData",sep="")))
 
 	gnn1_probs <- as.matrix(predict(gnn1, newdata=Xv, k=10, method="dstWeighted"))
 
@@ -44,7 +44,7 @@ for (j in 1:3) {
 	gnn1_PAs <- simplify2array(lapply(tmp1,matrix,nrow=nsites,ncol=nsp))
 	rm(tmp1)
 
-	save(gnn1_PAs, file=paste(PD2,set_no,"/gnn1_PAs_",j,"_",dataN[sz],".RData",sep=""))
+	save(gnn1_PAs, file=file.path(PD2,set_no,paste("gnn1_PAs_",j,"_",dataN[sz],".RData",sep="")))
 
 	rm(Xv)
 	rm(gnn1)

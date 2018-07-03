@@ -31,7 +31,7 @@ if (paramUncert==TRUE){
 
 for (j in 1:3) {
 
-	load(file=paste(FD2,set_no,"/glm1_",j,"_",dataN[sz],".RData",sep=""))
+	load(file=file.path(FD2,set_no,paste("glm1_",j,"_",dataN[sz],".RData",sep="")))
 
 	nsp <- length(DD_v[[j]])
 	nsites <- nrow(DD_v[[j]][[1]])
@@ -46,7 +46,7 @@ for (j in 1:3) {
 	                                                    error=function(e){cat("ERROR :",conditionMessage(e), "\n")}) }
 	glm1b_PAs <- aperm(simplify2array( glm1b_PAs), c(1,3,2))
 
-	save(glm1b_PAs, file=paste(PD2,set_no,"/glm1b_PAs_",j,"_",dataN[sz],".RData",sep=""))
+	save(glm1b_PAs, file=file.path(PD2,set_no,paste("glm1b_PAs_",j,"_",dataN[sz],".RData",sep="")))
 
 	rm(glms1)
 	rm(glm1b_PAs)

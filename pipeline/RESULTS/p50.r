@@ -4,7 +4,7 @@
 ensmblModels <- opts$modelEnsemble
 prevThrs <- opts$prevaleceThreshold
 
-filebody<-paste(RD2,Sets[d],"/beta_inds_site_valid_",sep="")
+filebody<-file.path(RD2,Sets[d],"beta_inds_site_valid_")
 if (is.numeric(prevThrs)) {
 	filebody<-paste(filebody,"spThr",prevThrs*100,"_",sep="")
 }
@@ -12,7 +12,7 @@ load(file=paste(filebody,dataN[sz],".RData",sep=""))
 
 filesnames<-c("sp_rich_site_","beta_inds_site_")
 
-filebodies<-paste(RD2,Sets[d],"/",filesnames,sep="")
+filebodies<-paste(file.path(RD2,Sets[d]),filesnames,sep="/")
 if (is.numeric(prevThrs)) {
 	filebodies<-paste(filebodies,"spThr",prevThrs*100,"_",sep="")
 }
@@ -88,8 +88,8 @@ for (j in 1:3) {
 	}
 }
 
-filebody1<-paste(RDfinal,dataN[sz],"/f50_sprichSite_",sep="")
-filebody2<-paste(RDfinal,dataN[sz],"/f50_Betas_",sep="")
+filebody1<-file.path(RDfinal,dataN[sz],"/f50_sprichSite_")
+filebody2<-file.path(RDfinal,dataN[sz],"/f50_Betas_")
 if (is.numeric(prevThrs)) {
 	filebody1<-paste(filebody1,"spThr",prevThrs*100,"_",sep="")
 	filebody2<-paste(filebody2,"spThr",prevThrs*100,"_",sep="")
@@ -105,20 +105,20 @@ save(f50_Betas, file=paste(filebody2,Sets[d],".RData",sep=""))
 
 ##########################################################################################
 
-tmp1<-abs(0.5-f50_sprichSite)
-tmp3<-list()
-for (b in 1:3) {
-	tmp3[[b]]<-abs(0.5-f50_Betas[[b]])
-}
-
-PMs[[17]]<-as.vector(tmp1)
-names(PMs)[17]<-"calibration2site"
-
-for (b in 1:3) {
-	PMs[[(17+b)]]<-as.vector(tmp3[[b]])
-	names(PMs)[(17+b)]<-paste("calibration3beta",b,sep="")
-}
-rm(tmp1,tmp3)
-gc()
+# tmp1<-abs(0.5-f50_sprichSite)
+# tmp3<-list()
+# for (b in 1:3) {
+# 	tmp3[[b]]<-abs(0.5-f50_Betas[[b]])
+# }
+# 
+# PMs[[17]]<-as.vector(tmp1)
+# names(PMs)[17]<-"calibration2site"
+# 
+# for (b in 1:3) {
+# 	PMs[[(17+b)]]<-as.vector(tmp3[[b]])
+# 	names(PMs)[(17+b)]<-paste("calibration3beta",b,sep="")
+# }
+# rm(tmp1,tmp3)
+# gc()
 
 ##########################################################################################

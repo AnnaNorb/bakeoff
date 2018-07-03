@@ -19,8 +19,8 @@ for (j in 1:3) {
 			glmmPQL1_PAs <- array(NA,dim=list(nsites,nsp,REPs))
 			glmmPQLspat1_PAs <- glmmPQL1_PAs
 			
-			load(file=paste(FD,set_no,"/","glmmpql1_",j,"_",dataN[sz],".RData",sep=""))
-			load(file=paste(FD,set_no,"/glmmpql_spat1_",j,"_",dataN[sz],".RData",sep=""))
+			load(file=file.path(FD,set_no,paste("glmmpql1_",j,"_",dataN[sz],".RData",sep="")))
+			load(file=file.path(FD,set_no,paste("glmmpql_spat1_",j,"_",dataN[sz],".RData",sep="")))
 
 			glmmPQL1_preds	<- foreach(i=1:nsp, .packages=c("MASS","nlme")) %dopar% { tryCatch({ predict(glmmpql1[[i]], newdata=dada[[i]], level=0, type='response')}, 
 																						error=function(e){cat("ERROR :",conditionMessage(e), "\n")}) }
@@ -40,8 +40,8 @@ for (j in 1:3) {
 			glmmPQLspat1_PAs[,,n]<-rbinom(glmmPQL_spat1_preds,1,glmmPQL_spat1_preds)
 		}
 
-		save(glmmPQL1_PAs, file=paste(PD2,set_no,"/glmmPQL1_PAs_",j,"_",dataN[sz],".RData",sep=""))
-		save(glmmPQLspat1_PAs, file=paste(PD2,set_no,"/glmmPQLspat1_PAs_",j,"_",dataN[sz],".RData",sep=""))
+		save(glmmPQL1_PAs, file=file.path(PD2,set_no,paste("glmmPQL1_PAs_",j,"_",dataN[sz],".RData",sep="")))
+		save(glmmPQLspat1_PAs, file=file.path(PD2,set_no,paste("glmmPQLspat1_PAs_",j,"_",dataN[sz],".RData",sep="")))
 
 		rm(glmmPQL1_preds)
 		rm(glmmPQL_spat1_preds)

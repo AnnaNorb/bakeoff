@@ -6,7 +6,7 @@ prevThrs <- opts$prevaleceThreshold
 
 filesnames<-c("sp_rich_site_","beta_inds_site_")
 
-filebodies<-paste(RD2,Sets[d],"/",filesnames,sep="")
+filebodies<-paste(file.path(RD2,Sets[d]),filesnames,sep="/")
 if (is.numeric(prevThrs)) {
 	filebodies<-paste(filebodies,"spThr",prevThrs*100,"_",sep="")
 }
@@ -44,9 +44,8 @@ for (j in 1:3) {
 	}
 }
 
-
-filebody1<-paste(RDfinal,dataN[sz],"/spRichSiteSD_",sep="")
-filebody2<-paste(RDfinal,dataN[sz],"/betaIndSD_",sep="")
+filebody1<-file.path(RDfinal,dataN[sz],"/spRichSiteSD_")
+filebody2<-file.path(RDfinal,dataN[sz],"/betaIndSD_")
 if (is.numeric(prevThrs)) {
 	filebody1<-paste(filebody1,"spThr",prevThrs*100,"_",sep="")
 	filebody2<-paste(filebody2,"spThr",prevThrs*100,"_",sep="")
@@ -62,25 +61,25 @@ save(betaIndSD, file=paste(filebody2,Sets[d],".RData",sep=""))
 
 ##########################################################################################
 
-if (is.null(ensmblModels)!=TRUE) {
-	tmp1<-colMeans(spRichSiteSD)
-	tmp3<-lapply(betaIndSD,colMeans)
-} else {
-	tmp1<-apply(spRichSiteSD,3,rowMeans)
-	tmp3<-list()
-	for (b in 1:3) {
-		tmp3[[b]]<-apply(betaIndSD[[b]],3,rowMeans)
-	}
-}
-
-PMs[[13]]<-as.vector(tmp1)
-names(PMs)[13]<-"sharpness2site"
-
-for (b in 1:3) {
-	PMs[[(13+b)]]<-as.vector(tmp3[[b]])
-	names(PMs)[(13+b)]<-paste("sharpness3beta",b,sep="")
-}
-rm(tmp1,tmp3)
-gc()
+# if (is.null(ensmblModels)!=TRUE) {
+# 	tmp1<-colMeans(spRichSiteSD)
+# 	tmp3<-lapply(betaIndSD,colMeans)
+# } else {
+# 	tmp1<-apply(spRichSiteSD,3,rowMeans)
+# 	tmp3<-list()
+# 	for (b in 1:3) {
+# 		tmp3[[b]]<-apply(betaIndSD[[b]],3,rowMeans)
+# 	}
+# }
+# 
+# PMs[[13]]<-as.vector(tmp1)
+# names(PMs)[13]<-"sharpness2site"
+# 
+# for (b in 1:3) {
+# 	PMs[[(13+b)]]<-as.vector(tmp3[[b]])
+# 	names(PMs)[(13+b)]<-paste("sharpness3beta",b,sep="")
+# }
+# rm(tmp1,tmp3)
+# gc()
 
 ##########################################################################################

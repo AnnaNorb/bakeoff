@@ -8,7 +8,7 @@ require(mvabund)
 
 for (j in 1:3) {
 
-	load(file=paste(FD,set_no,"/manyglm1_",j,"_",dataN[sz],".RData",sep=""))
+	load(file=file.path(FD,set_no,paste("manyglm1_",j,"_",dataN[sz],".RData",sep="")))
 
 	Xv <- data.frame(x_valid[[j]][,-1])
 	Yv <- mvabund(y_valid[[j]])
@@ -24,7 +24,7 @@ for (j in 1:3) {
 	manyglm1_PAs <- simplify2array(lapply(tmp,matrix,nrow=nsites,ncol=nsp))
 	rm(tmp)
 
-	save(manyglm1_PAs, file=paste(PD2,set_no,"/manyglm1_PAs_",j,"_",dataN[sz],".RData",sep=""))
+	save(manyglm1_PAs, file=file.path(PD2,set_no,paste("manyglm1_PAs_",j,"_",dataN[sz],".RData",sep="")))
 
 	rm(manyglm1_PAs)
 	rm(manyglm1_probs)

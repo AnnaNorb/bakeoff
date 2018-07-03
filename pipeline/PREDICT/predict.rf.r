@@ -23,7 +23,7 @@ for (j in 1:3) {
 
 		rff1<-NULL
 		#load(file=paste(FD,set_no,"/rfs/rf_",j,"_sp",k,"_",dataN[sz],".RData",sep=""))
-		load(file=paste(FD,set_no,"/rfs/rf1_",j,"_sp",k,"_",dataN[sz],".RData",sep=""))
+		load(file=file.path(FD,set_no,paste("rfs/rf1_",j,"_sp",k,"_",dataN[sz],".RData",sep="")))
 
 		for (n in 1:REPs) {			
 
@@ -42,7 +42,7 @@ for (j in 1:3) {
 		}
 	}	
 
-	save(rf1_PAs, file=paste(PD2,set_no,"/rf1_PAs_",j,"_",dataN[sz],".RData",sep=""))
+	save(rf1_PAs, file=file.path(PD2,set_no,file.path("rf1_PAs_",j,"_",dataN[sz],".RData",sep="")))
 	
 	rm(rff1)
 	rm(rf1_PAs)

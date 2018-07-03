@@ -38,9 +38,9 @@ for (j in 1:3) {
 		comTimes<-eT-sT
 		}
 
-	save(gams1, file=paste(FD,set_no,"/gams1_",j,"_",dataN[sz],".RData",sep=""))
+	save(gams1, file=file.path(FD,set_no,paste("gams1_",j,"_",dataN[sz],".RData",sep="")))
 	if (j==1) {
-		save(comTimes, file=paste(FD,set_no,"/comTimes_GAM_",dataN[sz],".RData",sep=""))
+		save(comTimes, file=file.path(FD,set_no,paste("comTimes_GAM_",dataN[sz],".RData",sep="")))
 		rm(comTimes)
 	}
 
@@ -54,9 +54,9 @@ for (j in 1:3) {
 		comTimes<-eT-sT
 		}
 
-	save(gams_spat1, file=paste(FD,set_no,"/gams_spat1_",j,"_",dataN[sz],".RData",sep=""))
+	save(gams_spat1, file=file.path(FD,set_no,paste("gams_spat1_",j,"_",dataN[sz],".RData",sep="")))
 	if (j==1) {
-		save(comTimes, file=paste(FD,set_no,"/comTimes_GAMspat1_",dataN[sz],".RData",sep=""))
+		save(comTimes, file=file.path(FD,set_no,paste("comTimes_GAMspat1_",dataN[sz],".RData",sep="")))
 		rm(comTimes)
 	}
 	

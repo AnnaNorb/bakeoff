@@ -44,9 +44,9 @@ for (j in 1:3) {
 	}
 	gnn1<-gnns[[which(rocs==max(rocs))]]
 	
-	save(gnn1, file=paste(FD,set_no,"/gnn1_",j,"_",dataN[sz],".RData",sep=""))
+	save(gnn1, file=file.path(FD,set_no,paste("gnn1_",j,"_",dataN[sz],".RData",sep="")))
 	if (j==1) {
-		save(comTimes, file=paste(FD,set_no,"/comTimes_GNN1_",dataN[sz],".RData",sep=""))
+		save(comTimes, file=file.path(FD,set_no,paste("comTimes_GNN1_",dataN[sz],".RData",sep="")))
 		rm(comTimes)
 	}
 

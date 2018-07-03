@@ -38,9 +38,9 @@ for (j in 1:3) {
 		eT<-Sys.time()
 		comTimes<-eT-sT
 		}
-	save(glmmpql1, file=paste(FD,set_no,"/","glmmpql1_",j,"_",dataN[sz],".RData",sep=""))
+	save(glmmpql1, file=file.path(FD,set_no,paste("glmmpql1_",j,"_",dataN[sz],".RData",sep="")))
 	if (j==1) {
-		save(comTimes, file=paste(FD,set_no,"/comTimes_GLMPQL1_",dataN[sz],".RData",sep=""))
+		save(comTimes, file=file.path(FD,set_no,paste("comTimes_GLMPQL1_",dataN[sz],".RData",sep="")))
 		rm(comTimes)
 	}
 
@@ -54,9 +54,9 @@ for (j in 1:3) {
 		eT<-Sys.time()
 		comTimes<-eT-sT
 		}
-	save(glmmpql_spat1, file=paste(FD,set_no,"/glmmpql_spat1_",j,"_",dataN[sz],".RData",sep=""))
+	save(glmmpql_spat1, file=file.path(FD,set_no,paste("glmmpql_spat1_",j,"_",dataN[sz],".RData",sep="")))
 	if (j==1) {
-	save(comTimes, file=paste(FD,set_no,"/comTimes_GLMPQLspat1_",dataN[sz],".RData",sep=""))
+		save(comTimes, file=file.path(FD,set_no,paste("comTimes_GLMPQLspat1_",dataN[sz],".RData",sep="")))
 	rm(comTimes)
 	}
 

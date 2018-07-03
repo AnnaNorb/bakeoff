@@ -18,9 +18,9 @@ for (j in 1:3) {
 		eT<-Sys.time()
 		comTimes<-eT-sT
 		}
-	save(mars1, file=paste(FD,set_no,"/mars1_",j,"_",dataN[sz],".RData",sep=""))
+	save(mars1, file=file.path(FD,set_no,paste("mars1_",j,"_",dataN[sz],".RData",sep="")))
 	if (j==1) {
-		save(comTimes, file=paste(FD,set_no,"/comTimes_MARS1_",dataN[sz],".RData",sep=""))
+		save(comTimes, file=file.path(FD,set_no,paste("comTimes_MARS1_",dataN[sz],".RData",sep="")))
 		rm(comTimes)
 	}
 
@@ -31,9 +31,9 @@ for (j in 1:3) {
 		eT<-Sys.time()
 		comTimes<-eT-sT
 		}
-	save(mars2, file=paste(FD,set_no,"/mars2_",j,"_",dataN[sz],".RData",sep=""))
+	save(mars2, file=file.path(FD,set_no,paste("mars2_",j,"_",dataN[sz],".RData",sep="")))
 	if (j==1) {
-		save(comTimes, file=paste(FD,set_no,"/comTimes_MARS2_",dataN[sz],".RData",sep=""))
+		save(comTimes, file=file.path(FD,set_no,paste("comTimes_MARS2_",dataN[sz],".RData",sep="")))
 		rm(comTimes)
 	}
 	

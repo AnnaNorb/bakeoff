@@ -13,8 +13,8 @@ for (j in 1:3) {
 	nsites <- nrow(y_valid[[j]])
 	nsp <- ncol(y_valid[[j]])
 	
-	load(file=paste(FD,set_no,"/mars1_",j,"_",dataN[sz],".RData",sep=""))
-	load(file=paste(FD,set_no,"/mars2_",j,"_",dataN[sz],".RData",sep=""))
+	load(file=file.path(FD,set_no,paste("mars1_",j,"_",dataN[sz],".RData",sep="")))
+	load(file=file.path(FD,set_no,paste("mars2_",j,"_",dataN[sz],".RData",sep="")))
 
 	mars1_preds <- predict(mars1, newdata=Xv)
 	mars2_preds <- predict(mars2, newdata=Xv)
@@ -34,8 +34,8 @@ for (j in 1:3) {
 	rm(Z1)
 	rm(Z2)
 
-	save(mars1_PAs, file=paste(PD2,set_no,"/mars1_PAs_",j,"_",dataN[sz],".RData",sep=""))
-	save(mars2_PAs, file=paste(PD2,set_no,"/mars2_PAs_",j,"_",dataN[sz],".RData",sep=""))
+	save(mars1_PAs, file=file.path(PD2,set_no,paste("mars1_PAs_",j,"_",dataN[sz],".RData",sep="")))
+	save(mars2_PAs, file=file.path(PD2,set_no,paste("mars2_PAs_",j,"_",dataN[sz],".RData",sep="")))
 
 	rm(mars1_PAs)
 	rm(mars2_PAs)

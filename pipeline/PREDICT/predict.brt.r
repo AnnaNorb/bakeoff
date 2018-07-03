@@ -9,7 +9,7 @@ require("dismo")
 
 for (j in 1:3) {
 
-	load(file=paste(FD,set_no,"/brt1_",j,"_",dataN[sz],".RData",sep="")) 
+	load(file=file.path(FD,set_no,paste("brt1_",j,"_",dataN[sz],".RData",sep="")))
 	newX<-as.data.frame(x_valid[[j]])
 
 	probmat <- rep(colMeans(y_train[[j]]),times=rep(nrow(y_valid[[j]]),times=ncol(y_valid[[j]])))
@@ -28,7 +28,7 @@ for (j in 1:3) {
 		}
 		brt1_PAs[,,n] <- matrix(rbinom(length(Probs),1,Probs),ncol=ncol(Probs))
 	}
-	save(brt1_PAs, file=paste(PD2,set_no,"/brt1_PAs_",j,"_",dataN[sz],".RData",sep=""))
+	save(brt1_PAs, file=file.path(PD2,set_no,paste("brt1_PAs_",j,"_",dataN[sz],".RData",sep="")))
 
 	rm(probmat)
 	rm(Probs)

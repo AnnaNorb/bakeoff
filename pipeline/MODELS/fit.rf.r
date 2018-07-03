@@ -53,7 +53,7 @@ for (j in 1:3) {
 		} else {
 			rff1<-NULL	
 		}
-		save(rff1, file=paste(FD,set_no,"/rfs/rf1_",j,"_sp",k,"_",dataN[sz],".RData",sep=""))
+		save(rff1, file=file.path(FD,set_no,"rfs",paste("rf1_",j,"_sp",k,"_",dataN[sz],".RData",sep="")))
 		rm(rff1)
 		gc()
 	}
@@ -62,7 +62,7 @@ for (j in 1:3) {
 		comTimes<-eT-sT
 		}
 	if (j==1) {
-	save(comTimes, file=paste(FD,set_no,"/comTimes_RF1_",dataN[sz],".RData",sep=""))
+	save(comTimes, file=file.path(FD,set_no,paste("comTimes_RF1_",dataN[sz],".RData",sep="")))
 	rm(comTimes)
 	}
 }

@@ -14,7 +14,7 @@ for (j in 1:3) {
 
 	for (m in 1:2) {
 
-		load(file=paste(FD,set_no,"/gams",modls[m],"_",j,"_",dataN[sz],".RData",sep=""))
+		load(file=file.path(FD,set_no,paste("gams",modls[m],"_",j,"_",dataN[sz],".RData",sep="")))
 
 		if (m==1) { 
 			gams<-gams1
@@ -46,7 +46,7 @@ for (j in 1:3) {
 		rm(gams)
 		rm(gam_preds)
 
-		save(gam_PAs, file=paste(PD2,set_no,"/gam",modls[m],"_PAs_",j,"_",dataN[sz],".RData",sep=""))
+		save(gam_PAs, file=file.path(PD2,set_no,paste("gam",modls[m],"_PAs_",j,"_",dataN[sz],".RData",sep="")))
 		rm(gam_PAs)
 		gc()
 

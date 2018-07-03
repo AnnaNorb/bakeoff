@@ -4,7 +4,7 @@
 ensmblModels <- opts$modelEnsemble
 prevThrs <- opts$prevaleceThreshold
 
-filebody<-paste(RD2,Sets[d],"/sp_occ_probs_",sep="")
+filebody<-file.path(RD2,Sets[d],"sp_occ_probs_")
 if (is.numeric(prevThrs)) {
 	filebody<-paste(filebody,"spThr",prevThrs*100,"_",sep="")
 }
@@ -39,7 +39,7 @@ for (j in 1:3) {
 	}
 }
 
-filebody<-paste(RDfinal,dataN[sz],"/expctME_",sep="")
+filebody<-file.path(RDfinal,dataN[sz],"expctME_")
 if (is.numeric(prevThrs)) {
 	filebody<-paste(filebody,"spThr",prevThrs*100,"_",sep="")
 }
@@ -52,7 +52,7 @@ save(expctME, file=paste(filebody,Sets[d],".RData",sep=""))
 
 ##########################################################################################
 
-PMs[[1]]<-as.vector(expctME)
-names(PMs)[1]<-"accuracy1"
+# PMs[[1]]<-as.vector(expctME)
+# names(PMs)[1]<-"accuracy1"
 
 ##########################################################################################

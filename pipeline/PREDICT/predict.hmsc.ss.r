@@ -5,7 +5,8 @@
 for (m in 1:2) {
 	for (j in 1:3) {
 
-		preds<-read.csv(paste(PD2,set_no, "/ssHMSC/preds_ss_",set_no,"_hmsc", m,"_d",j,"_",dataN[sz],".csv", sep=""),header=FALSE)
+		predFile<-file.path(PD2,set_no,"ssHMSC",paste("preds_ss_",set_no,"_hmsc", m,"_d",j,"_",dataN[sz],".csv",sep=""))
+		preds<-read.csv(,header=FALSE)
 
 		nsp <- ncol(y_valid[[j]])
 		niter <- ncol(preds)/nsp
@@ -28,7 +29,7 @@ for (m in 1:2) {
 			ss_hmsc_PAs<-ss_hmsc_PAs[((dim(y_train[[j]])[1])+1):nsite,,]
 		}
 
-		save(ss_hmsc_PAs, file=paste(PD2,set_no,"/ss_hmsc",m,"_PAs_",j,"_",dataN[sz],".RData",sep=""))
+		save(ss_hmsc_PAs, file=file.path(PD2,set_no,paste("ss_hmsc",m,"_PAs_",j,"_",dataN[sz],".RData",sep="")))
 
 		rm(preds)
 		rm(ss_hmsc_PAs)

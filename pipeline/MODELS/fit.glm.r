@@ -27,9 +27,9 @@ for (j in 1:3) {
 		comTimes<-eT-sT
 	}
 
-	save(glms1, file=paste(FD2,set_no,"/glm1_",j,"_",dataN[sz],".RData",sep=""))
+	save(glms1, file=file.path(FD,set_no,paste("glm1_",j,"_",dataN[sz],".RData",sep="")))
 	if (j==1) {
-		save(comTimes, file=paste(FD2,set_no,"/comTimes_GLM1_",dataN[sz],".RData",sep=""))
+		save(comTimes, file=file.path(FD,set_no,paste("comTimes_GLM1_",dataN[sz],".RData",sep="")))
 	}
 }
 

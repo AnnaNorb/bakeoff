@@ -16,7 +16,7 @@ for (j in 1:3) {
 	Xv <- x_valid[[j]][,-1]
 	Xv <- Xv[,1:ncovar]
 
-	load(file=paste(FD,set_no,"/svm1_",j,"_",dataN[sz],".RData",sep=""))
+	load(file=file.path(FD,set_no,paste("svm1_",j,"_",dataN[sz],".RData",sep="")))
 
 	svm_notnull<-svmf1[which(svmf1!="NULL")]
 	svm1_PAs <- array(NA, dim=c(nsites,nsp,REPs))
@@ -34,7 +34,7 @@ for (j in 1:3) {
 		rm(probs)
 	}
 
-	save(svm1_PAs, file=paste(PD2,set_no,"/svm1_PAs_",j,"_",dataN[sz],".RData",sep=""))
+	save(svm1_PAs, file=file.path(PD2,set_no,paste("svm1_PAs_",j,"_",dataN[sz],".RData",sep="")))
 
 	rm(svmf1)
 	rm(svm_notnull)

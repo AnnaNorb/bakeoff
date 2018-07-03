@@ -7,10 +7,10 @@ require(BayesComm)
 ##########################################################################################
 
 for (j in 1:3) {	
-	load(file=paste(FD,set_no,"/no0sp_BC_",j,"_",dataN[sz],".RData",sep=""))
+	load(file=file.path(FD,set_no,paste("no0sp_BC_",j,"_",dataN[sz],".RData",sep="")))
 		
 	for (m in 1:2) {
-		load(file=paste(FD,set_no,"/bc",m,"_",j,"_",dataN[sz],".RData",sep=""))
+		load(file=file.path(FD,set_no,paste("bc",m,"_",j,"_",dataN[sz],".RData",sep="")))
 
 		if (m==1) { bc<-bc1}
 		if (m==2) { bc<-bc2}
@@ -30,7 +30,7 @@ for (j in 1:3) {
 		}
 		bc_PAs <- bc_pred_w0sp
 
-		save(bc_PAs, file=paste(PD2,set_no,"/bc",m,"_PAs_",j,"_",dataN[sz],".RData",sep=""))
+		save(bc_PAs, file=file.path(PD2,set_no,paste("bc",m,"_PAs_",j,"_",dataN[sz],".RData",sep="")))
 
 		rm(bc_pred)
 		rm(bc_pred_w0sp)

@@ -7,9 +7,9 @@ require(BayesComm)
 ##########################################################################################
 
 if (MCMC2) {
-	mcmcControl<-list(nburn=40000,niter=100000,nthin=600)
+	mcmcControl<-list(nburn=80000,niter=100000,nthin=200)
 } else {
-	mcmcControl<-list(nburn=20000,niter=50000,nthin=300)
+	mcmcControl<-list(nburn=40000,niter=50000,nthin=100)
 }
 
 ##########################################################################################
@@ -24,7 +24,7 @@ for (j in 1:3) {
 		y_train_no0sp<-y_train_no0sp[,-drp]
 	}
 	no0spNames<-colnames(y_train_no0sp)
-	save(no0spNames, file=paste(FD,set_no,"/no0sp_BC_",j,"_",dataN[sz],".RData",sep=""))
+	save(no0spNames, file=file.path(FD,set_no,paste("no0sp_BC_",j,"_",dataN[sz],".RData",sep="")))
 
 	if (j==1) { sT<-Sys.time() }
 		#bc1	<-	try(BC(Y=y_train[[j]], X=x_train[[j]][,-1], model="environment",
@@ -38,14 +38,14 @@ for (j in 1:3) {
 		comTimes<-eT-sT
 	}	
 	if (MCMC2) {
-		save(bc1, file=paste(FD,set_no,"/bc1_",j,"_",dataN[sz],"_MCMC2.RData",sep=""))
+		save(bc1, file=file.path(FD,set_no,paste("bc1_",j,"_",dataN[sz],"_MCMC2.RData",sep="")))
 		if (j==1) {
-			save(comTimes, file=paste(FD,set_no,"/comTimes_BC1_",dataN[sz],"_MCMC2.RData",sep=""))
+			save(comTimes, file=file.path(FD,set_no,paste("comTimes_BC1_",dataN[sz],"_MCMC2.RData",sep="")))
 		}
 	} else {
-		save(bc1, file=paste(FD,set_no,"/bc1_",j,"_",dataN[sz],".RData",sep=""))
+		save(bc1, file=file.path(FD,set_no,paste("bc1_",j,"_",dataN[sz],".RData",sep="")))
 		if (j==1) {
-			save(comTimes, file=paste(FD,set_no,"/comTimes_BC1_",dataN[sz],".RData",sep=""))
+			save(comTimes, file=file.path(FD,set_no,paste("comTimes_BC1_",dataN[sz],".RData",sep="")))
 		}
 	}
 
@@ -58,14 +58,14 @@ for (j in 1:3) {
 		comTimes<-eT-sT
 	}	
 	if (MCMC2) {
-		save(bc2, file=paste(FD,set_no,"/bc2_",j,"_",dataN[sz],"_MCMC2.RData",sep=""))
+		save(bc2, file=file.path(FD,set_no,paste("bc2_",j,"_",dataN[sz],"_MCMC2.RData",sep="")))
 		if (j==1) {
-			save(comTimes, file=paste(FD,set_no,"/comTimes_BC2_",dataN[sz],"_MCMC2.RData",sep=""))
+			save(comTimes, file=file.path(FD,set_no,paste("comTimes_BC2_",dataN[sz],"_MCMC2.RData",sep="")))
 		}
 	} else {
-		save(bc2, file=paste(FD,set_no,"/bc2_",j,"_",dataN[sz],".RData",sep=""))
+		save(bc2, file=file.path(FD,set_no,paste("bc2_",j,"_",dataN[sz],".RData",sep="")))
 		if (j==1) {
-			save(comTimes, file=paste(FD,set_no,"/comTimes_BC2_",dataN[sz],".RData",sep=""))
+			save(comTimes, file=file.path(FD,set_no,paste("comTimes_BC2_",dataN[sz],".RData",sep="")))
 		}
 	}
 

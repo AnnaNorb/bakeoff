@@ -54,9 +54,9 @@ for (j in 1:3) {
 		comTimes<-eT-sT
 	}
 		
-	save(brt1, file=paste(FD,set_no,"/brt1_",j,"_",dataN[sz],".RData",sep=""))
+	save(brt1, file=file.path(FD,set_no,paste("brt1_",j,"_",dataN[sz],".RData",sep="")))
 	if (j==1) {
-		save(comTimes, file=paste(FD,set_no,"/comTimes_BRT1_",dataN[sz],".RData",sep=""))
+		save(comTimes, file=file.path(FD,set_no,paste("comTimes_BRT1_",dataN[sz],".RData",sep="")))
 	}
 
 	rm(brt1)

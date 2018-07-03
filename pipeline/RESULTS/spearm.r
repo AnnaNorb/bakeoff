@@ -4,7 +4,7 @@
 ensmblModels <- opts$modelEnsemble
 prevThrs <- opts$prevaleceThreshold
 
-filebody<-paste(RD2,Sets[d],"/beta_inds_site_valid_",sep="")
+filebody<-file.path(RD2,Sets[d],"beta_inds_site_valid_")
 if (is.numeric(prevThrs)) {
 	filebody<-paste(filebody,"spThr",prevThrs*100,"_",sep="")
 }
@@ -12,7 +12,7 @@ load(file=paste(filebody,dataN[sz],".RData",sep=""))
 
 filesnames<-c("sp_rich_site_","beta_inds_site_")
 
-filebodies<-paste(RD2,Sets[d],"/",filesnames,sep="")
+filebodies<-paste(file.path(RD2,Sets[d]),filesnames,sep="/")
 if (is.numeric(prevThrs)) {
 	filebodies<-paste(filebodies,"spThr",prevThrs*100,"_",sep="")
 }
@@ -39,6 +39,10 @@ for (j in 1:3) {
 	} else {
 		sps<-1:ncol(y_valid[[j]])
 	}
+	
+dim(spRichSiteSpear[,j])
+dim(t(apply(sp_rich_site[[j]],2,cor,y=rowSums(y_valid[[j]][,sps]),method="spearman")))
+dim(sp_rich_site[[j]])
 
 	if (is.null(ensmblModels)!=TRUE) {
 		spRichSiteSpear[,j] <- t(apply(sp_rich_site[[j]],2,cor,y=rowSums(y_valid[[j]][,sps]),method="spearman"))
@@ -54,8 +58,8 @@ for (j in 1:3) {
 
 }
 
-filebody1<-paste(RDfinal,dataN[sz],"/spRichSiteSpear_",sep="")
-filebody2<-paste(RDfinal,dataN[sz],"/betaIndSpear_",sep="")
+filebody1<-file.path(RDfinal,dataN[sz],"/spRichSiteSpear_")
+filebody2<-file.path(RDfinal,dataN[sz],"/betaIndSpear_")
 if (is.numeric(prevThrs)) {
 	filebody1<-paste(filebody1,"spThr",prevThrs*100,"_",sep="")
 	filebody2<-paste(filebody2,"spThr",prevThrs*100,"_",sep="")
@@ -79,26 +83,26 @@ if (sum(is.na(unlist(betaIndSpear)))>0){
 
 ##########################################################################################
 
-if (is.null(ensmblModels)!=TRUE) {
-	tmp1<-colMeans(spRichSiteSpear,na.rm=T)
-	tmp3<-lapply(betaIndSpear,colMeans,na.rm=T)
-} else {
-	tmp1<-apply(spRichSiteSpear,3,rowMeans,na.rm=T)
-	tmp3<-list()
-	for (b in 1:3) {
-		tmp3[[b]]<-apply(betaIndSpear[[b]],3,rowMeans,na.rm=T)
-	}
-}
-
-PMs[[9]]<-as.vector(tmp1)
-names(PMs)[9]<-"discrimination2site"
-
-for (b in 1:3) {
-	PMs[[(9+b)]]<-as.vector(tmp3[[b]])
-	names(PMs)[(9+b)]<-paste("discrimination3beta",b,sep="")
-}
-rm(tmp1,tmp3)
-gc()
+# if (is.null(ensmblModels)!=TRUE) {
+# 	tmp1<-colMeans(spRichSiteSpear,na.rm=T)
+# 	tmp3<-lapply(betaIndSpear,colMeans,na.rm=T)
+# } else {
+# 	tmp1<-apply(spRichSiteSpear,3,rowMeans,na.rm=T)
+# 	tmp3<-list()
+# 	for (b in 1:3) {
+# 		tmp3[[b]]<-apply(betaIndSpear[[b]],3,rowMeans,na.rm=T)
+# 	}
+# }
+# 
+# PMs[[9]]<-as.vector(tmp1)
+# names(PMs)[9]<-"discrimination2site"
+# 
+# for (b in 1:3) {
+# 	PMs[[(9+b)]]<-as.vector(tmp3[[b]])
+# 	names(PMs)[(9+b)]<-paste("discrimination3beta",b,sep="")
+# }
+# rm(tmp1,tmp3)
+# gc()
 
 ##########################################################################################
 

@@ -2,8 +2,8 @@
 # MULTIVARIATE REGRESSION TREE
 ##########################################################################################
 
-require('mvpart')
-require('caret')
+require(mvpart)
+require(caret)
 
 ##########################################################################################
 
@@ -24,9 +24,9 @@ for (j in 1:3) {
 		eT<-Sys.time()
 		comTimes<-eT-sT
 	}
-	save(mrts, file=paste(FD,set_no,"/mrts_",j,"_",dataN[sz],".RData",sep=""))
+	save(mrts, file=file.path(FD,set_no,paste("mrts_",j,"_",dataN[sz],".RData",sep="")))
 	if (j==1) {
-		save(comTimes, file=paste(FD,set_no,"/comTimes_MRTS1_",dataN[sz],".RData",sep=""))
+		save(comTimes, file=file.path(FD,set_no,paste("comTimes_MRTS1_",dataN[sz],".RData",sep="")))
 		rm(comTimes)
 	}
 	

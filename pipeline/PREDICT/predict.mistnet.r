@@ -10,7 +10,7 @@ for (j in 1:3) {
 
 	for (m in 1:2) {
 
-		load(file=paste(FD,set_no,"/mstnt",m,"_",j,"_",dataN[sz],".RData",sep=""))
+		load(file=file.path(FD,set_no,paste("mstnt",m,"_",j,"_",dataN[sz],".RData",sep="")))
 
 		Xv <- x_valid[[j]][,-1]
 	
@@ -24,7 +24,7 @@ for (j in 1:3) {
 		mstnt_PA <- rbinom(mstnt_probs,1,mstnt_probs)
 		mstnt_PAs <- array(mstnt_PA, dim=list(dim(mstnt_probs)[1],dim(mstnt_probs)[2],dim(mstnt_probs)[3]))
 
-		save(mstnt_PAs, file=paste(PD2,set_no,"/mstnt",m,"_PAs_",j,"_",dataN[sz],".RData",sep=""))
+		save(mstnt_PAs, file=file.path(PD2,set_no,paste("mstnt",m,"_PAs_",j,"_",dataN[sz],".RData",sep="")))
 
 		if (m==1) { rm(mstnt1) }
 		if (m==2) { rm(mstnt2) }

@@ -14,7 +14,7 @@ for (j in 1:3) {
 
 	Xv <- x_valid[[j]][,-1]
 
-	load(file=paste(FD,set_no,"/sams1_",j,"_",dataN[sz],".RData",sep=""))
+	load(file=file.path(FD,set_no,paste("sams1_",j,"_",dataN[sz],".RData",sep="")))
 
 	sam1_PAs <- array(NA, dim=list(nsites,nsp,REPs))
 
@@ -23,11 +23,11 @@ for (j in 1:3) {
 		sam1_PAs[,,n] <- sam1_preds$predict.y
 		}
 
-	save(sam1_PAs, file=paste(PD2,set_no,"/sam1_PAs_",j,"_",dataN[sz],".RData",sep=""))
+	save(sam1_PAs, file=file.path(PD2,set_no,paste("sam1_PAs_",j,"_",dataN[sz],".RData",sep="")))
 
 	rm(sams1)
 	rm(sam1_preds)
-	rm(sam_PAs)	
+	rm(sam1_PAs)	
 	gc()
 	
 	}

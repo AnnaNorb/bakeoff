@@ -37,11 +37,11 @@ for (j in 1:3) {
 		comTimes<-eT-sT
 		}
 	
-	save(sams1, file=paste(FD,set_no,"/sams1_",j,"_",dataN[sz],".RData",sep=""))
+	save(sams1, file=file.path(FD,set_no,paste("sams1_",j,"_",dataN[sz],".RData",sep="")))
 	noSAMs1 <- nrow(sams1$betas)
-	save(noSAMs1, file=paste(FD,set_no,"/noSAMs1_",j,"_",dataN[sz],".RData",sep=""))
+	save(noSAMs1, file=file.path(FD,set_no,paste("noSAMs1_",j,"_",dataN[sz],".RData",sep="")))
 	if (j==1) {
-		save(comTimes, file=paste(FD,set_no,"/comTimes_SAM1_",dataN[sz],".RData",sep=""))
+		save(comTimes, file=file.path(FD,set_no,paste("comTimes_SAM1_",dataN[sz],".RData",sep="")))
 	}
 }
 ##########################################################################################

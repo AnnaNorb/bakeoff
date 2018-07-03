@@ -4,7 +4,7 @@
 ensmblModels <- opts$modelEnsemble
 prevThrs <- opts$prevaleceThreshold
 
-filebody<-paste(RD2,Sets[d],"/sp_occ_probs_",sep="")
+filebody<-file.path(RD2,Sets[d],"sp_occ_probs_")
 if (is.numeric(prevThrs)) {
 	filebody<-paste(filebody,"spThr",prevThrs*100,"_",sep="")
 }
@@ -31,7 +31,7 @@ if (is.null(ensmblModels)!=TRUE) {
 	}
 }
 
-filebody<-paste(RDfinal,dataN[sz],"/sqrt_pr_",sep="")
+filebody<-file.path(RDfinal,dataN[sz],"sqrt_pr_")
 if (is.numeric(prevThrs)) {
 	filebody<-paste(filebody,"spThr",prevThrs*100,"_",sep="")
 }
@@ -44,7 +44,7 @@ save(sqrt_pr, file=paste(filebody,Sets[d],".RData",sep=""))
 
 ##########################################################################################
 
-PMs[[3]]<-as.vector(sqrt_pr)
-names(PMs)[3]<-"sharpness1"
+# PMs[[3]]<-as.vector(sqrt_pr)
+# names(PMs)[3]<-"sharpness1"
 
 ##########################################################################################
