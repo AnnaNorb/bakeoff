@@ -38,7 +38,7 @@ MCMC2=false;
 ```
 Then fit the models and produce predictions.
 ```
-for dsz=1:2
+for dsz=1:3
     for s=1:nsets
 
         run(bakeoffSettings)
