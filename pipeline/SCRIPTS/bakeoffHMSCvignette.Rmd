@@ -1,0 +1,55 @@
+---
+title: "Bakeoff Pipeline for HMSC"
+author: Anna Norberg
+geometry: margin=1cm
+output: pdf_document
+date: "`r format(Sys.time(), '%d %B %Y')`"
+---
+
+\fontsize{11}{14}
+\selectfont
+
+Bakeoff is a pipeline for fitting various single and joint species distribution models to community data.
+The main script used is 'bakeoff.pipeline.m', which guides the user through fitting the models and producing predictions 
+based on validation data. All the material are available in Github: AnnaNorb/bakeoff. For the pipeline to run smoothly, 
+the required folder structure is created as a part of the pipeline to the location indicated by the user. 
+
+This documentation is for the method HMSC, which works in Matlab environment.
+
+The published version 2.0 is included in the pipeline, but if the user wishes to use the most recent version,
+it can be downloaded form the developer webpage: https://www.helsinki.fi/en/researchgroups/metapopulation-research-centre/hmsc
+
+First clear the workspace.
+```
+clearvars;
+```
+
+Define directories and run settings.
+```
+wdpath=fullfile('...','bakeoff','pipeline');
+bakeoffSettings=fullfile(wdpath,'SCRIPTS','settingsHMSCmatlab.m');
+bakeoff_ssSettings=fullfile(wdpath,'SCRIPTS','settings_ssHMSCmatlab.m');
+run(bakeoffSettings)
+```
+
+Choose whether you want to run regular MCMC chains ('false') or twice as long ('true').
+```
+MCMC2=false;
+```
+Then fit the models and produce predictions.
+```
+for dsz=1:2
+    for s=1:nsets
+
+        run(bakeoffSettings)
+        run(fullfile(wdpath,'MODELS','fit_predict_hmsc.m'))    
+
+        run(bakeoff_ssSettings)
+        run(fullfile(wdpath,'MODELS','fit_predict_hmsc_ss.m'))
+
+    end
+end
+```
+
+
+

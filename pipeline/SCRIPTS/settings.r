@@ -11,59 +11,78 @@ betaInds<-c("sim", "nest", "sor")
 
 # basic working directories
 ##########################################################################################
-WD <- paste(pth,"bakeoff/pipeline/",sep="")
+WD <- file.path(pth,"bakeoff","pipeline")
+
+# scripts directory
+SD <- file.path(WD,"SCRIPTS")
 
 # data directory
-DD <- paste(WD,"DATA/",sep="")
+DD <- file.path(WD,"DATA")
 
 # model fitting scripts directory
-MD <- paste(WD,"MODELS/",sep="")
+MD <- file.path(WD,"MODELS")
 
 # model fits directory
-FD <- paste(WD,"FITS/",sep="")
+FD <- file.path(WD,"FITS")
 
 # model fits directory 2
-FD2 <- paste(WD,"FITS2/",sep="")
+FD2 <- file.path(WD,"FITS2")
 
 # prediction scripts directory
-PD <- paste(WD,"PREDICT/",sep="")
+PD <- file.path(WD,"PREDICT")
 
 # predictions directory
-PD2 <- paste(WD,"PREDICTIONS/",sep="")
+PD2 <- file.path(WD,"PREDICTIONS")
 
 # scripts directory for prev., rich, co-occ, etc. calculations
-RD <- paste(WD,"RESULTS/",sep="")
+RD <- file.path(WD,"RESULTS")
 
 # predictions  directory for prev., rich, co-occ, etc. calculations  (desktops)
-RD2 <- paste(WD,"RESULTS2/",sep="")
+RD2 <- file.path(WD,"RESULTS2")
 
 # final results directory
-RDfinal <- paste(WD,"RESULTS_final/",sep="")
+RDfinal <- file.path(WD,"RESULTS_final")
 
-DIRS<-list(WD,DD,MD,FD,PD,PD2,RD,RD2,RDfinal)
+DIRS<-c(WD,DD,MD,FD,PD,PD2,RD,RD2,RDfinal)
 
 # read data
 ##########################################################################################
-readdata<-paste(WD,"SCRIPTS/read.data.r",sep="")
+readdata<-file.path(SD,"read.data.r")
 
-
-# folder for the scripts for calculating occ probs, sp rich, beta indices
+# fit models
 ##########################################################################################
-modpredsFolder<-paste(WD,"SCRIPTS/modify_preds",sep="")
+fitmodels<-file.path(SD,"pipe","fit_models.r")
+
+# make predictions
+##########################################################################################
+makepreds<-file.path(SD,"pipe","pred.r")
+
+# modify predictions, calculate performance measures, computation times
+##########################################################################################
+modpredsFolder<-file.path(SD,"pipe","modify_preds")
+modpreds<-file.path(SD,"pipe","mod_preds.r")
+
+pms<-file.path(SD,"pipe","pms.r")
+pms_tbl<-file.path(SD,"pipe","pms_tbl.r")
+pms_comb<-file.path(SD,"pipe","pms_comb.r")
+pms_plot<-file.path(SD,"pipe","pms_plot.r")
+
+compt_times<-file.path(SD,"pipe","compt_times.r")
 
 # save objects
 ##########################################################################################
-saveobjs<-c("sz","d","set_no","REPs","SETT","readdata","modpredsFolder","modpreds","dataN",
-			"saveobjs","crs","Sets","betaInds",
-			"pth","WD","DD","MD","FD","PD","PD2","RD","RD2","RDfinal","MCMC2")
+saveobjs<-c("sz","d","set_no","REPs","SETT","readdata","fitmodels","makepreds",
+			"modpredsFolder","modpreds","dataN","saveobjs","Sets","betaInds",
+			"pth","WD","SD","DD","MD","FD","PD","PD2","RD","RD2","RDfinal","MCMC2")
 saveobjs2<-c(saveobjs,"PMs","PMS","opts","ENS","PRV")
 
 # models
 ##########################################################################################
 mod_names <- list("GAM1","GAM2",
-				"GLM1",
+				"GLM1","GLM8",
 				"GLM2","GLM3",
 				"GLM6",
+				"GLM9",
 				"MRTS1",
 				"GNN1",
 				"RF1",
@@ -78,7 +97,7 @@ mod_names <- list("GAM1","GAM2",
 				"GLM4","GLM5",
 				"HMSC1","HMSC2","HMSC3")
 mod_names2 <- c(rep("GAM",2),
-				rep("GLM",4),
+				rep("GLM",6),
 				"MRTS",
 				"GNN",
 				"RF",
@@ -94,9 +113,10 @@ mod_names2 <- c(rep("GAM",2),
 				rep("GLM",2),
 				rep("HMSC",3))
 mod_names3 <- c("GAM","GAMspat1",
-				"GLM1",
+				"GLM1","GLM1b",
 				"GLMPQL1","GLMPQLspat1",
 				"MVABUND1",
+				"TRAITGLM1",
 				"MRTS1",
 				"GNN1",
 				"RF1",
@@ -118,9 +138,10 @@ nfrmwrks<-length(unique(mod_names2))
 # predictions
 ##########################################################################################
 pred_names	<-	list("gam1_PAs_","gam_spat1_PAs_",
-				"glm1_PAs_",
+				"glm1_PAs_","glm1b_PAs_",
 				"glmmPQL1_PAs_","glmmPQLspat1_PAs_",
 				"manyglm1_PAs_",
+				"traitglm1_PAs_",
 				"mrt1_PAs_",
 				"gnn1_PAs_",
 				"rf1_PAs_",
@@ -146,7 +167,7 @@ if (length(mod_names)!=length(pred_names)) {
 
 # MODEL FEATURES
 ##########################################################################################
-feats<-read.csv2(paste(DD,"feats.csv",sep=""),header=T)
+feats<-read.csv2(file.path(DD,"feats.csv"),header=T)
 rownames(feats)<-feats[,1]
 feats<-feats[unlist(mod_names),]
 
@@ -164,7 +185,7 @@ minIsBest1<-matrix(0,nrow=length(PMnames))
 rownames(minIsBest1)<-PMnames
 minIsBest1[minTomaxBest,]<-1
 minIsBest1<-cbind(rownames(minIsBest1),minIsBest1)
-if (!file.exists(paste(RDfinal,"minIsBest1.csv",sep=""))) {
-	write.table(minIsBest1,file=paste(RDfinal,"minIsBest1.csv",sep=""),sep=",",row.names=F,col.names=F)					
+if (!file.exists(file.path(RDfinal,"minIsBest1.csv"))) {
+	write.table(minIsBest1,file=file.path(RDfinal,"minIsBest1.csv"),sep=",",row.names=F,col.names=F)					
 }
 ##########################################################################################

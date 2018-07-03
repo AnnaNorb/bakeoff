@@ -38,7 +38,7 @@ for (j in 1:3) {
 	for (m in 1:length(pred_names_tmp)) {
 
     	model <- local({
-    	load(paste(PD2, Sets[d],"/",pred_names_tmp[[m]],j,"_",dataN[sz],".RData",sep=""))
+    	load(file.path(PD2, Sets[d],paste(pred_names_tmp[[m]],j,"_",dataN[sz],".RData",sep="")))
     	stopifnot(length(ls())==1)
     	environment()[[ls()]]
     	})
@@ -104,7 +104,7 @@ for (j in 1:3) {
 	beta_inds_site[[j]]	<-	betaIndsSite
 }
 
-filebody<-paste(RD2,Sets[d],"/beta_inds_site_",sep="")
+filebody<-file.path(RD2,Sets[d],"/beta_inds_site_")
 if (is.numeric(prevThrs)) {
 	filebody<-paste(filebody,"spThr",prevThrs*100,"_",sep="")
 }
@@ -117,7 +117,7 @@ save(beta_inds_site, file=paste(filebody,dataN[sz],".RData",sep=""))
 rm(beta_inds_site)   
 
 if (is.null(ensmblModels)) {
-	filebody<-paste(RD2,Sets[d],"/beta_inds_site_valid_",sep="")
+	filebody<-file.path(RD2,Sets[d],"/beta_inds_site_valid_")
 	if (is.numeric(prevThrs)) {
 		filebody<-paste(filebody,"spThr",prevThrs*100,"_",sep="")
 	}
