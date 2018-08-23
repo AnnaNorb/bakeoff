@@ -1,8 +1,8 @@
 # GAMs FOR THE BAKEOFF DATA
 ##########################################################################################
 
-require('mgcv')
-require('nlme')
+require(mgcv)
+require(nlme)
 
 
 if (set_no=="birds" | set_no=="butterfly" | set_no=="plant") { 
@@ -45,8 +45,8 @@ for (j in 1:3) {
 	}
 
 	if (j==1) { sT<-Sys.time() }
-	
-	gams_spat1	<-	foreach	(i=1:nsp, .packages='mgcv') %dopar% { tryCatch({gamm(form, correlation=corGaus(form=~Rand1+Rand2), family=binomial(link="probit"), data=DD_t[[j]][[i]]) },
+
+	gams_spat1	<-	foreach	(i=1:nsp, .packages='mgcv') %dopar% { tryCatch({gamm(form, correlation=corExp(form=~Rand1+Rand2), family=binomial(link="probit"), data=DD_t[[j]][[i]]) },
 							error=function(e){cat("ERROR :",conditionMessage(e), "\n")}) }
 	
 	if (j==1) {

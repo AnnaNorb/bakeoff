@@ -9,7 +9,7 @@ bakeoffSettings=fullfile(wdpath,'SCRIPTS','settingsHMSCmatlab.m');
 bakeoff_ssSettings=fullfile(wdpath,'SCRIPTS','settings_ssHMSCmatlab.m');
 run(bakeoffSettings)
 
-% run twice longer MCMC chains?
+% run second set of MCMC chains?
 MCMC2=false;
 
 for dsz=1:3     % data size (1, 2 or 3)

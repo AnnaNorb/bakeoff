@@ -2,8 +2,8 @@
 # BOOSTED REGRESSION TREES
 ##########################################################################################
 
-require("gbm")
-require("dismo")
+require(gbm)
+require(dismo)
 
 tcs<-c(2:5)
 lrs<-c(0.1,0.01,0.001,0.0001)

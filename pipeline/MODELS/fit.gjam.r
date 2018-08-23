@@ -15,18 +15,16 @@ if (set_no=="vegetation") {
 }
 
 if (MCMC2) {
-	rl <- list(r = 2, N = 3)
-	rl2 <- list(r = 2, N = 2)
-	ml  	<- list(ng=100000, burnin=80000, typeNames='PA', holdoutN=0)
-	ml_rl  <- list(ng=100000, burnin=80000, typeNames='PA', holdoutN=0, reductList=rl)
-	ml_rl2  <- list(ng=100000, burnin=80000, typeNames='PA', holdoutN=0, reductList=rl2)
+	set.seed(9)
 } else {
-	rl <- list(r = 2, N = 3)
-	rl2 <- list(r = 2, N = 2)
-	ml  <- list(ng=50000, burnin=40000, typeNames='PA', holdoutN=0)
-	ml_rl  	<- list(ng=50000, burnin=40000, typeNames='PA', holdoutN=0, reductList=rl)
-	ml_rl2  <- list(ng=50000, burnin=40000, typeNames='PA', holdoutN=0, reductList=rl2)
+	set.seed(7)	
 }
+	
+rl <- list(r = 2, N = 3)
+rl2 <- list(r = 2, N = 2)
+ml  <- list(ng=50000, burnin=40000, typeNames='PA', holdoutN=0)
+ml_rl  	<- list(ng=50000, burnin=40000, typeNames='PA', holdoutN=0, reductList=rl)
+ml_rl2  <- list(ng=50000, burnin=40000, typeNames='PA', holdoutN=0, reductList=rl2)
 
 ##########################################################################################
 

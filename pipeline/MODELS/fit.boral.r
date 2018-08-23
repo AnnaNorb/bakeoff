@@ -4,22 +4,19 @@
 
 require(boral)
 
-##########################################################################################
-
-# if (MCMC2) {
-# 	mcmcControl<-list(n.burnin=10000,n.iteration=20000,n.thin=200,seed=7)
-# } else {
-# 	mcmcControl<-list(n.burnin=5000,n.iteration=10000,n.thin=50,seed=7)
-# }
-
 Nburn1<-30000
 Niter1<-50000
 Nthin1<-10
 nSampls<-(Niter1-Nburn1)/Nthin1
 
 mcmcControl1<-list(n.burnin=Nburn1,n.iteration=Niter1,n.thin=Nthin1,seed=7)
+
+if (MCMC2) {
+	mcmcControl1$seed <- 9
+}
 mcmcControl2<-mcmcControl1
-if (sz==2) {
+
+if (sz > 1) {
 	if (d==1) {
 		Niter2<-20000
 		Nthin2<-5
@@ -41,13 +38,15 @@ if (sz==2) {
 		Nthin2<-5
 		Nburn2	<- Niter2-(nSampls*Nthin2)
 	}
-	mcmcControl2<-list(n.burnin=Nburn2,n.iteration=Niter2,n.thin=Nthin2,seed=7)
+	mcmcControl2$n.burnin <- Nburn2
+	mcmcControl2$n.iteration <- Niter2
+	mcmcControl2$thin <- Nthin2
+	
+	if (MCMC2) {
+		mcmcControl2$seed <- 9
+	}
 }
 
-if (MCMC2) {
-	mcmcControl1<-list(n.burnin=(Nburn1*2),n.iteration=(Niter1*2),n.thin=(Nthin1*2),seed=7)
-	mcmcControl2<-list(n.burnin=(Nburn2*2),n.iteration=(Niter2*2),n.thin=(Nthin2*2),seed=7)
-}
 
 ##########################################################################################
 

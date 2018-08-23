@@ -2,6 +2,9 @@
 RC = 0;
 clearvars -except RC bakeoffSettings bakeoff_ssSettings s dsz wdpath nsets MCMC2;
 RC = RC + 7;
+if MCMC2
+    RC = RC + 2;
+end
 rng(RC);
 warning('off','all');
 
@@ -14,15 +17,6 @@ nadaptrounds=3;
 nrounds=50;
 thin2=10;
 MCMCcut=41;
-
-if MCMC2
-    niters=200;
-    thin1=20;
-    nadaptrounds=3;
-    nrounds=100;
-    thin2=20;
-    MCMCcut=81;
-end
 
 MCMCsaveRam=true;
 MCMCsaveFile=false;

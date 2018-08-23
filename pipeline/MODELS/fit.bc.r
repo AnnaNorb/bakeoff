@@ -7,10 +7,12 @@ require(BayesComm)
 ##########################################################################################
 
 if (MCMC2) {
-	mcmcControl<-list(nburn=80000,niter=100000,nthin=200)
+	set.seed(9)
 } else {
-	mcmcControl<-list(nburn=40000,niter=50000,nthin=100)
+	set.seed(7)	
 }
+
+mcmcControl<-list(nburn=40000,niter=50000,nthin=100)
 
 ##########################################################################################
 
